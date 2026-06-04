@@ -36,10 +36,14 @@ These are the core economics employers in the federal public sector. Most run a 
 - **Department of Infrastructure, Transport, Regional Development, Communications and the Arts** — Graduate Program — https://www.infrastructure.gov.au/department/about/careers
 - **Department of Defence** — Defence Graduate Program (Economics stream available) — https://www.defence.gov.au/jobs-careers
 - **Department of Veterans' Affairs** — Graduate Program — https://www.dva.gov.au/about-us/careers
+- **Department of Agriculture, Fisheries and Forestry (DAFF)** — Graduate Program; policy, trade, agriculture economics and analyst roles — https://www.agriculture.gov.au/about/jobs
+- **Department of the Prime Minister and Cabinet (PM&C)** — Graduate Program; policy, data, economic and social policy roles — https://www.pmc.gov.au/about-us/careers
+- **National Disability Insurance Agency (NDIA / NDIS)** — Graduate Program; analyst, data, policy and evaluation roles — https://www.ndis.gov.au/about-us/careers
 
 ### Trade, investment, and finance
 
 - **Austrade (Australian Trade and Investment Commission)** — Graduate Program — https://www.austrade.gov.au/about/careers
+- **Tourism Australia** — Graduate Program; analyst, research, economics, markets and tourism policy roles — https://www.tourism.australia.com/en/about/careers.html
 - **Export Finance Australia** — Graduate Program; Internships — https://www.exportfinance.gov.au/careers/
 - **Australian Office of Financial Management (AOFM)** — Graduate Program; Internships (small but very technical) — https://www.aofm.gov.au/careers
 - **Future Fund Management Agency** — Graduate Program; Industry Placement Program — https://www.futurefund.gov.au/about-us/careers
@@ -50,6 +54,8 @@ These are the core economics employers in the federal public sector. Most run a 
 - **Bureau of Infrastructure and Transport Research Economics (BITRE)** — Graduate roles via Infrastructure department
 - **Commonwealth Grants Commission** — Graduate Program — https://www.cgc.gov.au/about-us/careers
 - **Inspector-General of Taxation** — limited but tax-policy focused
+- **Civil Aviation Safety Authority (CASA)** — Graduate Program; regulatory policy, aviation economics and analyst roles — https://www.casa.gov.au/about-us/careers
+- **Australian Energy Market Operator (AEMO)** — Graduate Program; internships; energy market analyst and forecasting roles — https://aemo.com.au/about/careers
 
 ---
 
@@ -72,6 +78,8 @@ State Treasuries are major employers of economics graduates. Programs typically 
 - **Infrastructure NSW**, **Infrastructure Victoria**, **Building Queensland** — separate but related state-level
 - **Independent Pricing and Regulatory Tribunal (IPART, NSW)** — Graduate Program (highly relevant for econ regulation interest) — https://www.ipart.nsw.gov.au/about-us/careers
 - **Essential Services Commission (Victoria)** — Graduate Program — https://www.esc.vic.gov.au/about-us/careers
+- **Study NSW** — Policy, international education, data and analyst roles via NSW Government careers — https://www.nsw.gov.au/departments-and-agencies/study-nsw
+- **Transgrid** — Graduate Program; energy markets, regulation, corporate finance and analyst roles — https://www.transgrid.com.au/careers
 
 ---
 
@@ -96,6 +104,9 @@ Big 4 banks run separate Graduate Programs (rotational across the business) and 
 - **Citi (Citigroup Australia)** — Summer Analyst; Graduate Program — https://jobs.citi.com/early-career
 - **Deutsche Bank Australia** — Internships, Graduate Program — https://www.db.com/careers/en/students-and-graduates
 - **Bank of America (Australia)** — Global Markets Internship — https://campus.bankofamerica.com/
+- **Citadel Securities** — Internship and graduate trading/quantitative analyst roles — https://www.citadelsecurities.com/careers/students/
+- **Grant Samuel** — Graduate analyst and corporate advisory roles — https://grantsamuel.com.au/careers/
+- **Greenhill & Co.** — Analyst and internship roles in investment banking/advisory — https://www.greenhill.com/en/careers
 
 ### Mid-size banks and other lenders
 
@@ -122,6 +133,7 @@ Big 4 banks run separate Graduate Programs (rotational across the business) and 
 ### Major asset managers
 
 - **BlackRock Australia** — Summer Analyst Program; Graduate Program — https://careers.blackrock.com/students
+- **PIMCO Australia** — Analyst, graduate and internship roles in fixed income and investment management — https://careers.pimco.com/
 - **Vanguard Australia** — Internships and Graduate Program — https://www.vanguard.com.au/personal/about/careers
 - **State Street Australia** — Graduate Program — https://careers.statestreet.com/au/en
 - **Magellan Financial Group** — Internships and Analyst Program — https://www.magellangroup.com.au/careers/
@@ -149,6 +161,7 @@ These are pure economics consultancies — heavily relevant for econ students, d
 - **Frontier Economics** — Graduate Program (Sydney, Melbourne, Brisbane); Internship Program — https://www.frontier-economics.com.au/careers
 - **Deloitte Access Economics** — Graduate Program (within Deloitte); Vacation Program — https://www2.deloitte.com/au/en/pages/careers/articles/deloitte-access-economics-careers.html
 - **NERA Economic Consulting** — Graduate Consultant Program — https://www.nera.com/careers
+- **RBB Economics** — Analyst and internship roles in competition economics — https://www.rbbecon.com/careers/
 - **Compass Lexecon** — Analyst Program — https://www.compasslexecon.com/careers/
 - **ACIL Allen** — Graduate Program; Internships — https://www.acilallen.com.au/careers
 - **CIE (Centre for International Economics)** — Graduate Program — https://www.thecie.com.au/careers/
@@ -162,6 +175,8 @@ These are pure economics consultancies — heavily relevant for econ students, d
 - **HoustonKemp** — Graduate Program — https://www.houstonkemp.com/careers/
 - **AlphaBeta (Accenture)** — Analyst roles — now part of Accenture Strategy
 - **Charles River Associates (CRA Australia)** — Analyst Program
+- **FTI Consulting** — Graduate, vacationer, economics, corporate finance, strategy and disputes roles — https://www.fticonsulting.com/careers
+- **Urbis** — Graduate, intern, economics, property, planning and policy analyst roles — https://urbis.com.au/careers/
 
 ---
 
@@ -189,6 +204,24 @@ Major management consultancies all have economics-relevant graduate and internsh
 - **PwC Australia** — Graduate Program; Vacation Program (Consulting, Assurance, Tax, Deals) — https://www.pwc.com.au/about-us/careers/students.html
 - **EY Australia (Ernst & Young)** — Graduate Program; Vacation Program (Strategy & Transactions has economics work) — https://www.ey.com/en_au/careers/students
 - **KPMG Australia** — Graduate Program; Vacation Program; KPMG Economics practice — https://kpmg.com/au/en/home/careers/graduates.html
+- **BDO Australia** — Graduate Program; Vacation Program; advisory, corporate finance and economics-relevant roles — https://www.bdo.com.au/en-au/careers/students
+- **Grant Thornton Australia** — Graduate Program; Vacation Program; advisory and corporate finance roles — https://www.grantthornton.com.au/careers/students/
+- **Capgemini Australia** — Graduate Program; analyst, data, consulting and strategy roles — https://www.capgemini.com/au-en/careers/
+- **Nous Group** — Graduate consultant, intern and analyst roles in public policy and strategy — https://nousgroup.com/careers/
+- **Arup Australia** — Graduate Program; vacation roles; advisory, infrastructure economics, transport and planning roles — https://www.arup.com/careers/
+- **Visagio** — Graduate consultant, analyst, data and transformation roles — https://visagio.com/en/careers/
+
+---
+
+## 🏢 Private Sector — Corporate Graduate & Analyst Roles
+
+Large corporates and infrastructure firms often hire economics students into finance, commercial, strategy, business analyst, data analyst, market analyst, pricing, public policy and corporate affairs roles. These are less likely to say "economics" in the title, so check for finance analyst, commercial analyst, strategy analyst, public policy, business analyst, data analyst, graduate program, vacationer and internship keywords.
+
+- **Amazon Australia** — Financial Analyst, Brand Analyst, Business Analyst, Public Policy, Operations and graduate/internship roles — https://www.amazon.jobs/en/teams/internships-for-students
+- **TikTok Australia** — Graduate, intern, public policy, strategy, business analyst and data roles — https://careers.tiktok.com/
+- **EssilorLuxottica Australia** — Graduate, finance, commercial analyst, business analyst and retail strategy roles — https://careers.essilorluxottica.com/
+- **Mirvac** — Graduate Program; development, investment, finance, research and analyst roles — https://www.mirvac.com/careers
+- **St Trinity Property Group** — Property, investment, analyst, sales and business roles — https://sttrinity.com.au/careers/
 
 ---
 
@@ -209,6 +242,7 @@ Most think tank roles are research assistant / intern positions rather than stru
 - **Australian Institute of Family Studies** — Research roles — https://aifs.gov.au/careers
 - **Centre for Policy Development (CPD)** — Internships — https://cpd.org.au/about/careers/
 - **Australian Strategic Policy Institute (ASPI)** — Internships (security/economics intersection) — https://www.aspi.org.au/about-aspi/employment
+- **Australian Institute of International Affairs (AIIA)** — Internships, research, events, international economics and policy roles — https://www.internationalaffairs.org.au/about-us/careers/
 
 ---
 

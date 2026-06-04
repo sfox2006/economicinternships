@@ -17,7 +17,7 @@ Hi!
 
 Want to keep getting these? Sign up yourself or refer a friend to help us grow: [signup form link — Sam to supply once Google Form created]
 
-Here's this edition's roundup of currently-open internships, graduate jobs, analyst jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. I've grouped them by sector — Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Business Lobby Groups & Unions → Universities & Research Institutes → Nonprofits → International Organisations.
+Here's this edition's roundup of currently-open internships, graduate jobs, analyst jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. I've grouped them by sector — Federal Government → State Government → Banks → Asset Managers → Corporate Graduate & Analyst Roles → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Business Lobby Groups & Unions → Universities & Research Institutes → Nonprofits → International Organisations.
 
 📎 A filterable spreadsheet of every currently-open program or role is attached — sort by sector, type, deadline, and location.
 ```
@@ -47,6 +47,7 @@ Each section uses an emoji + ALL CAPS title on its own line, no markdown:
 🏛️ STATE GOVERNMENT
 🏦 BANKS & INVESTMENT BANKS
 💼 ASSET MANAGERS & SUPER FUNDS
+🏢 CORPORATE GRADUATE & ANALYST ROLES
 📊 ECONOMICS CONSULTANCIES
 🧠 STRATEGY & BIG 4 CONSULTING
 🔬 THINK TANKS & POLICY INSTITUTES
