@@ -19,7 +19,7 @@ The Young Economist Opportunity Roundup is a roundup of currently-open internshi
 
 This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
 
-Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 1-2 months.
+Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 3 months.
 
 Want to keep getting these? Sign up yourself, or refer a friend who might find this useful: https://forms.gle/MfAabUPCQpQ2m4QE7
 ```
@@ -35,7 +35,7 @@ This newsletter is available thanks to the support of the Young Economist Networ
 
 If you'd rather not be on this list, just hit reply and let me know — no hard feelings, I'll take you off right away.
 
-Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 1-2 months.
+Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 3 months.
 
 Want to keep getting these? Sign up yourself, or refer a friend who might find this useful: https://forms.gle/MfAabUPCQpQ2m4QE7
 ```
@@ -86,7 +86,7 @@ Within each sector section, order by:
 
 ## Coming up soon
 
-Use this section only for opportunities likely to open in the next 1-2 months. These are not currently open, so keep them out of the spreadsheet and main sections.
+Use this section only for opportunities likely to open in the next 3 months. These are not currently open, so keep them out of the spreadsheet and main sections.
 
 Format:
 

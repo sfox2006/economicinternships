@@ -305,15 +305,15 @@ YOUR JOB:
 2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
 3. Call read_reference_file for `organisations.md`, then run an extensive check across the remaining organisation list. Cover every major sector and prioritise named organisations with direct careers, student, graduate, internship, cadetship, or vacationer pages.
 4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates, but do not stop after only a small sample.
-5. Also include a short `upcoming_programs` watchlist for opportunities likely to open in the next 1-2 months. These must be clearly labelled as upcoming/expected and must not be mixed into the currently-open `programs` list.
+5. Also include a short `upcoming_programs` watchlist for opportunities likely to open in the next 3 months. These must be clearly labelled as upcoming/expected and must not be mixed into the currently-open `programs` list.
 6. Submit only after you have made a broad pass through the likely sources, exhausted the useful official pages, or reached the available web-fetch/agent-step budget. Stay within the configured cost budget even if that means a shorter but still useful issue.
 7. When you have a verified list of currently-open programs and any useful upcoming watchlist items, call submit_newsletter with the final structured payload.
 
 CRITICAL RULES:
 - Closed programs are EXCLUDED — not in the email body, not in the spreadsheet.
 - When uncertain whether a program is open, OMIT IT. Better a shorter accurate newsletter than a long one with broken listings.
-- Do not remove or suppress a currently-open program just because it appeared in the previous newsletter. Repeat it when the deadline is still ahead, applications are still open, or it remains useful to readers.
-- Upcoming programs are allowed only in `upcoming_programs`, not `programs`. Include them when the live page or a reliable prior-cycle pattern suggests applications are likely to open within 1-2 months.
+- Do not remove or suppress a currently-open program just because it appeared in any previous newsletter. Repeat it for however many newsletters are needed while the deadline is still ahead, applications are still open, or it remains useful to readers.
+- Upcoming programs are allowed only in `upcoming_programs`, not `programs`. Include them when the live page or a reliable prior-cycle pattern suggests applications are likely to open within the next 3 months.
 - Never invent a deadline. Use the hedging language from template.md.
 - Do not use the word "genuinely".
 - Match the section order, type order, header format, and tone from template.md.
@@ -395,7 +395,7 @@ def build_submit_tool_schema(cfg: NewsletterConfig) -> dict:
                 "upcoming_programs": {
                     "type": "array",
                     "description": (
-                        "Optional watchlist of programs likely to open in the next 1-2 months. "
+                        "Optional watchlist of programs likely to open in the next 3 months. "
                         "Do not include these in the spreadsheet or main currently-open sections."
                     ),
                     "items": {

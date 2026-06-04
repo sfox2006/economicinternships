@@ -15,7 +15,7 @@ A skill for drafting Sam Fox's recurring "Economics Careers Australia" newslette
 4. **Be specific about discipline.** Economics is broad — some roles want quantitative modelling, some want policy writing, some want financial markets analysis. Where the live page specifies, capture that in the description.
 5. **When uncertain, be honest.** Use "Apply early", "Rolling", "Annual cycle — check live page", or "Applications open" rather than guessing. Never invent a deadline.
 6. **Drop anything you cannot verify as open** by the planned send date.
-7. **Upcoming programs are separate.** If an opportunity is likely to open in the next 1-2 months, include it only in the `COMING UP SOON` watchlist, not in the currently-open sections or spreadsheet.
+7. **Upcoming programs are separate.** If an opportunity is likely to open in the next 3 months, include it only in the `COMING UP SOON` watchlist, not in the currently-open sections or spreadsheet.
 8. **Closed programs are not included** — neither in the currently-open email body nor in the spreadsheet.
 9. **Politically neutral framing.** This is not the More Opportunities! newsletter. Don't import its ideological framing. Describe each employer factually — Treasury is "Australia's central economic policy department", Grattan is "Australia's leading domestic policy think tank", not "centrist" or "non-partisan" labels that could read as editorialising.
 
@@ -23,7 +23,7 @@ A skill for drafting Sam Fox's recurring "Economics Careers Australia" newslette
 
 ### Step 1: Find what's been covered before
 
-Use the Gmail search tool with: `subject:"Economics Careers"` to find prior threads. Pull the most recent with `messageFormat: FULL_CONTENT` to see what was featured. Programs from the last 1–2 newsletters can and should be re-featured if deadlines are still ahead, applications are still open, or the opportunity remains useful to readers. Do not suppress a program merely because it appeared in the last newsletter.
+Use the Gmail search tool with: `subject:"Economics Careers"` to find prior threads. Pull recent context with `messageFormat: FULL_CONTENT` to see what was featured. Programs from any previous newsletter can and should be re-featured for however many newsletters are needed if deadlines are still ahead, applications are still open, or the opportunity remains useful to readers. Do not suppress a program merely because it appeared in an earlier newsletter.
 
 ### Step 2: Build the candidate list
 
@@ -42,7 +42,7 @@ Read `references/organisations.md` for the full list of target organisations gro
 
 Search live employer pages for all economics-relevant early-career entry points, including keywords such as `internship`, `intern`, `graduate program`, `graduate job`, `graduate economist`, `cadetship`, `cadet`, `vacation program`, `vacationer`, `summer vacation`, `industry placement`, and `scholarship`.
 
-For opportunities that are not yet open but are likely to open in the next 1-2 months, capture them in `upcoming_programs` with:
+For opportunities that are not yet open but are likely to open in the next 3 months, capture them in `upcoming_programs` with:
 - Organisation
 - Program name
 - Sector
@@ -85,7 +85,7 @@ Read `references/template.md`. Subject is `Economics Careers Australia!`. Sectio
 9. 🌱 Nonprofits
 10. 🌐 International Organisations
 
-After the currently-open sections, include `🗓️ COMING UP SOON` if there are useful upcoming programs expected in the next 1-2 months. Keep it short and clearly labelled as a watchlist.
+After the currently-open sections, include `🗓️ COMING UP SOON` if there are useful upcoming programs expected in the next 3 months. Keep it short and clearly labelled as a watchlist.
 
 Skip any section with no currently-open programs.
 
