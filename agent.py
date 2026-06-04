@@ -41,7 +41,7 @@ MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-4-5-20251001")
 CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "20"))
 MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "28"))
 MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "75"))
-MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "4000"))
+MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "12000"))
 MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "4.50"))
 INPUT_COST_PER_MTOK = float(os.environ.get("INPUT_COST_PER_MTOK", "1.00"))
 OUTPUT_COST_PER_MTOK = float(os.environ.get("OUTPUT_COST_PER_MTOK", "5.00"))
@@ -481,6 +481,17 @@ def run_agent(cfg: NewsletterConfig) -> dict:
         estimated_cost += response_cost_usd(resp)
         print(f"[{TODAY}] Estimated Claude spend: ${estimated_cost:.2f} USD / ${MAX_COST_USD:.2f} USD")
         messages.append({"role": "assistant", "content": resp.content})
+
+        if resp.stop_reason == "max_tokens":
+            messages.append({
+                "role": "user",
+                "content": (
+                    "Your previous response hit the output token limit before completing. "
+                    "Continue concisely from where you left off. If you have enough verified "
+                    "open programs, call submit_newsletter now instead of doing more research."
+                ),
+            })
+            continue
 
         if resp.stop_reason != "tool_use":
             raise RuntimeError(f"Agent stopped without submitting. stop_reason={resp.stop_reason}")

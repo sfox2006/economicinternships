@@ -33,7 +33,7 @@ jobs:
           CLAUDE_CALL_DELAY_SECONDS: "20"
           MAX_AGENT_STEPS: "28"
           MAX_WEB_FETCHES: "75"
-          MAX_OUTPUT_TOKENS: "4000"
+          MAX_OUTPUT_TOKENS: "12000"
           MAX_COST_USD: "4.50"
           INPUT_COST_PER_MTOK: "1.00"
           OUTPUT_COST_PER_MTOK: "5.00"
