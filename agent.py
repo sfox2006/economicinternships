@@ -37,7 +37,7 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 # --- Configuration --------------------------------------------------------
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-20250514")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
 CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "65"))
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
