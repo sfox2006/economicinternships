@@ -17,7 +17,7 @@ Hi!
 
 Want to keep getting these? Sign up yourself or refer a friend to help us grow: [signup form link — Sam to supply once Google Form created]
 
-Here's this edition's roundup of currently-open internships and graduate programs for economics students and graduates in Australia. I've grouped them by sector — Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Nonprofits → International Organisations.
+Here's this edition's roundup of currently-open internships and graduate programs for economics students and graduates in Australia. I've grouped them by sector — Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Business Lobby Groups & Unions → Nonprofits → International Organisations.
 
 📎 A filterable spreadsheet of every currently-open program is attached — sort by sector, type (Internship vs Graduate Program), deadline, and location.
 ```
@@ -27,7 +27,7 @@ For editions going to a freshly expanded list (when many new readers have been a
 ```
 Hi!
 
-For those of you new to this list — welcome! "Economics Careers Australia" is a roundup I send out periodically of currently-open internships and graduate programs for economics students and graduates across Australia. It covers the full sector spectrum: federal and state Treasury, the RBA, regulators, the major banks, asset managers, economics consultancies, strategy and Big 4 firms, think tanks, nonprofits, and international organisations. The goal is simple: surface what's actually open right now, so you don't have to chase 30 different careers portals.
+For those of you new to this list — welcome! "Economics Careers Australia" is a roundup I send out periodically of currently-open internships and graduate programs for economics students and graduates across Australia. It covers the full sector spectrum: federal and state Treasury, the RBA, regulators, the major banks, asset managers, economics consultancies, strategy and Big 4 firms, think tanks, business lobby groups, unions, nonprofits, and international organisations. The goal is simple: surface what's actually open right now, so you don't have to chase 30 different careers portals.
 
 If you'd rather not be on this list, just hit reply and let me know — no hard feelings, I'll take you off right away.
 
@@ -50,6 +50,7 @@ Each section uses an emoji + ALL CAPS title on its own line, no markdown:
 📊 ECONOMICS CONSULTANCIES
 🧠 STRATEGY & BIG 4 CONSULTING
 🔬 THINK TANKS & POLICY INSTITUTES
+📣 BUSINESS LOBBY GROUPS & UNIONS
 🌱 NONPROFITS & NGOs
 🌐 INTERNATIONAL ORGANISATIONS
 ```

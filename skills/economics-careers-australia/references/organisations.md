@@ -152,7 +152,7 @@ These are pure economics consultancies — heavily relevant for econ students, d
 - **Compass Lexecon** — Analyst Program — https://www.compasslexecon.com/careers/
 - **ACIL Allen** — Graduate Program; Internships — https://www.acilallen.com.au/careers
 - **CIE (Centre for International Economics)** — Graduate Program — https://www.thecie.com.au/careers/
-- **Mandala** — Graduate Program; Internships (founded by Amit Singh and Hatch Quarter alumni — fast-growing policy/economics consultancy) — https://www.mandalapartners.com/careers
+- **Mandala Partners** — Graduate Program; Internships (fast-growing policy/economics consultancy) — https://www.mandalapartners.com/careers
 - **BIS Oxford Economics / Oxford Economics Australia** — Graduate roles — https://www.oxfordeconomics.com/careers
 - **Marsden Jacob Associates** — Graduate Consultant; Internships (specialises in resource economics) — https://www.marsdenjacob.com.au/careers
 - **Synergies Economic Consulting** (Brisbane) — Graduate Program — https://www.synergies.com.au/careers/
@@ -214,6 +214,76 @@ Most think tank roles are research assistant / intern positions rather than stru
 
 ---
 
+## 📣 Business Lobby Groups, Employer Associations & Unions
+
+Peak business bodies, employer associations, industry lobby groups, and unions often hire policy analysts, economists, campaign researchers, industrial/research officers, graduate policy staff, and interns. These are usually less structured than bank/government graduate programs, so verify live careers/jobs pages and LinkedIn before listing.
+
+### Business peak bodies and employer associations
+
+- **Business Council of Australia (BCA)** — Policy roles; internships; graduate/policy assistant roles — https://www.bca.com.au/about/careers
+- **Australian Chamber of Commerce and Industry (ACCI)** — Policy, economics, workplace relations, trade and advocacy roles — https://www.australianchamber.com.au/about/careers/
+- **Australian Industry Group (Ai Group)** — Policy, economics, workplace relations and industry advocacy roles — https://www.aigroup.com.au/about-ai-group/careers/
+- **Council of Small Business Organisations Australia (COSBOA)** — Policy and advocacy roles — https://www.cosboa.org.au/
+- **National Farmers' Federation (NFF)** — Policy, economics, trade and advocacy roles — https://nff.org.au/careers/
+- **Minerals Council of Australia (MCA)** — Economics, policy, trade, tax, energy and resources advocacy roles — https://minerals.org.au/about/careers/
+- **Association of Mining and Exploration Companies (AMEC)** — Policy, resources economics and advocacy roles — https://amec.org.au/about/careers/
+- **Australian Energy Producers** — Energy policy, economics and advocacy roles — https://energyproducers.au/
+- **Clean Energy Council** — Policy, markets, regulation and advocacy roles — https://www.cleanenergycouncil.org.au/about/careers
+- **Energy Networks Australia** — Energy market, network regulation and policy roles — https://www.energynetworks.com.au/about-us/careers/
+- **Property Council of Australia** — Housing, tax, planning and cities policy roles — https://www.propertycouncil.com.au/about-us/careers
+- **Housing Industry Association (HIA)** — Housing economics, policy and industry advocacy roles — https://hia.com.au/careers
+- **Master Builders Australia** — Construction economics, policy and advocacy roles — https://masterbuilders.com.au/about/careers/
+- **Australian Retailers Association (ARA)** — Retail economics, policy and advocacy roles — https://www.retail.org.au/careers
+- **National Retail Association** — Retail policy, workplace relations and advocacy roles — https://www.nationalretail.org.au/about/careers/
+- **Australian Food and Grocery Council (AFGC)** — Industry policy, trade, regulation and economics roles — https://www.afgc.org.au/about-afgc/careers
+- **Australian Banking Association (ABA)** — Banking policy, regulatory and economics roles — https://www.ausbanking.org.au/about-us/careers/
+- **Insurance Council of Australia (ICA)** — Insurance policy, economics, climate/disaster risk and regulation roles — https://insurancecouncil.com.au/about-us/careers/
+- **Financial Services Council (FSC)** — Financial services, superannuation and investment policy roles — https://www.fsc.org.au/about/careers
+- **Super Members Council** — Superannuation policy, retirement income and research roles — https://smcaustralia.com/about/careers/
+- **Australian Investment Council** — Private capital policy, research and advocacy roles — https://www.aic.co/about/careers/
+- **Tech Council of Australia** — Technology, productivity, skills and digital economy policy roles — https://techcouncil.com.au/about/
+- **Australian Information Industry Association (AIIA)** — ICT policy, government relations and research roles — https://www.aiia.com.au/about-us/careers/
+- **Australian Logistics Council (ALC)** — Freight, infrastructure and supply-chain policy roles — https://www.austlogistics.com.au/about/careers/
+- **Tourism & Transport Forum (TTF)** — Transport, tourism and aviation policy roles — https://www.ttf.org.au/about/careers/
+- **Australian Hotels Association (AHA)** — Hospitality, tax, labour market and tourism policy roles — https://aha.org.au/
+- **Restaurant & Catering Australia (R&CA)** — Hospitality policy, workplace relations and advocacy roles — https://www.rca.asn.au/
+- **Pharmacy Guild of Australia** — Health economics, small business and pharmacy policy roles — https://www.guild.org.au/about-us/careers
+- **Australian Medical Association (AMA)** — Health economics, policy and advocacy roles — https://www.ama.com.au/careers
+- **Universities Australia** — Higher education economics, policy and advocacy roles — https://www.universitiesaustralia.edu.au/about-us/careers/
+
+### Union peak bodies and labour councils
+
+- **Australian Council of Trade Unions (ACTU)** — Union Summer/Winter internships; policy, economics, campaigns and research roles — https://www.actu.org.au/about-the-actu/jobs
+- **Unions NSW** — Research, campaigns, policy and organiser roles — https://www.unionsnsw.org.au/about/jobs/
+- **Victorian Trades Hall Council (VTHC)** — Campaigns, policy and organiser roles — https://www.weareunion.org.au/jobs
+- **Queensland Unions** — Campaigns, research and policy roles — https://www.queenslandunions.org/
+- **UnionsWA** — Campaigns, policy and research roles — https://www.unionswa.com.au/
+- **SA Unions** — Campaigns, policy and research roles — https://www.saunions.org.au/
+- **Unions Tasmania** — Campaigns, policy and research roles — https://unionstas.com.au/
+- **UnionsACT** — Campaigns, policy and research roles — https://www.unionsact.org.au/
+- **Unions NT** — Campaigns, policy and research roles — https://www.unionsnt.com.au/
+
+### Major national unions
+
+- **Australian Services Union (ASU)** — Research, policy, campaigns and organiser roles — https://www.asu.asn.au/jobs
+- **Professionals Australia** — Economist/professional policy, research and advocacy roles — https://www.professionalsaustralia.org.au/About-Us/Careers
+- **Community and Public Sector Union (CPSU)** — Public sector policy, research, campaigns and organiser roles — https://www.cpsu.org.au/CPSU/Careers
+- **Finance Sector Union (FSU)** — Banking/finance labour market research, policy and campaign roles — https://www.fsunion.org.au/
+- **Shop, Distributive and Allied Employees' Association (SDA)** — Retail/labour market policy, research and organiser roles — https://national.sda.com.au/
+- **United Workers Union (UWU)** — Labour market research, campaigns and organiser roles — https://unitedworkers.org.au/
+- **Australian Manufacturing Workers' Union (AMWU)** — Manufacturing, industry policy, campaigns and organiser roles — https://www.amwu.org.au/
+- **Construction, Forestry and Maritime Employees Union (CFMEU)** — Construction, forestry, maritime, economics/policy and campaign roles — https://www.cfmeu.org/
+- **Electrical Trades Union (ETU)** — Energy transition, workforce and industrial policy roles — https://www.etunational.asn.au/
+- **Australian Nursing and Midwifery Federation (ANMF)** — Health workforce, wages and policy research roles — https://www.anmf.org.au/
+- **Australian Education Union (AEU)** — Education workforce, funding and policy research roles — https://www.aeufederal.org.au/
+- **National Tertiary Education Union (NTEU)** — Higher education policy, research and organiser roles — https://www.nteu.au/
+- **Health Services Union (HSU)** — Health labour market, policy, campaigns and organiser roles — https://hsu.net.au/
+- **Rail, Tram and Bus Union (RTBU)** — Transport economics, infrastructure and industrial policy roles — https://www.rtbu.org.au/
+- **Transport Workers' Union (TWU)** — Transport, gig economy, aviation and labour market policy roles — https://www.twu.com.au/
+- **Media, Entertainment & Arts Alliance (MEAA)** — Creative industries, labour market and policy roles — https://www.meaa.org/
+
+---
+
 ## 🌱 Nonprofits & NGOs
 
 Economics-relevant nonprofit roles, often focused on policy research, advocacy, or international development economics.
@@ -224,9 +294,6 @@ Economics-relevant nonprofit roles, often focused on policy research, advocacy, 
 - **Save the Children Australia** — Internships — https://www.savethechildren.org.au/careers
 - **ChildFund Australia** — Internships — https://www.childfund.org.au/about-us/careers/
 - **Australian Council of Social Service (ACOSS)** — Internships (welfare/poverty economics) — https://www.acoss.org.au/about/work-with-us/
-- **Business Council of Australia (BCA)** — Graduate Program; Internships — https://www.bca.com.au/about/careers
-- **Australian Industry Group (Ai Group)** — Internships — https://www.aigroup.com.au/about-ai-group/careers/
-- **Australian Council of Trade Unions (ACTU)** — Internships (labour market economics) — https://www.actu.org.au/about-the-actu/jobs
 - **The Smith Family** — Internships — https://www.thesmithfamily.com.au/about-us/careers
 - **Mission Australia** — Graduate Program; Internships — https://www.missionaustralia.com.au/about-us/careers
 

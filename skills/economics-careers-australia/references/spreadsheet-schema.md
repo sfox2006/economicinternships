@@ -10,7 +10,7 @@ Every "Economics Careers Australia" newsletter is accompanied by an Excel spread
 
 | # | Column name | Type | Allowed values / notes |
 |---|---|---|---|
-| 1 | Sector | Fixed list | Federal Government / State Government / Big 4 Bank / Investment Bank / Asset Manager / Super Fund / Economics Consulting / Strategy Consulting / Big 4 Consulting / Think Tank / Nonprofit / International Organisation / Other |
+| 1 | Sector | Fixed list | Federal Government / State Government / Banks & Investment Banks / Asset Managers & Super Funds / Economics Consultancies / Strategy & Big 4 Consulting / Think Tanks & Policy Institutes / Business Lobby Groups & Unions / Nonprofits & NGOs / International Organisations / Other |
 | 2 | Organisation | Text | Full name (e.g. "Reserve Bank of Australia") |
 | 3 | Program name | Text | Specific program (e.g. "2027 Graduate Program — Economist Stream") |
 | 4 | Type | Fixed list | Graduate Program / Cadetship / Summer Vacation / Internship / Industry Placement / Scholarship / Other |
