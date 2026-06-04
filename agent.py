@@ -15,6 +15,7 @@ import base64
 import json
 import os
 import re
+import time
 import urllib.request
 from datetime import date
 from email.mime.base import MIMEBase
@@ -37,6 +38,7 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-20250514")
+CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "65"))
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -134,7 +136,7 @@ def send_notification_email(drafts: list[dict]):
 
 # --- Web fetch ------------------------------------------------------------
 
-def web_fetch(url: str, max_chars: int = 8000) -> str:
+def web_fetch(url: str, max_chars: int = 2500) -> str:
     try:
         req = urllib.request.Request(
             url,
@@ -242,8 +244,29 @@ def load_skill(cfg: NewsletterConfig) -> str:
     parts = []
     for path in sorted(skill_dir.rglob("*.md")):
         rel = path.relative_to(skill_dir)
-        parts.append(f"=== {rel} ===\n\n{path.read_text()}")
+        if rel.as_posix() == "references/organisations.md":
+            parts.append(
+                "=== references/organisations.md ===\n\n"
+                "The full employer/program source list is available through "
+                "the read_reference_file tool. Read it before checking live pages."
+            )
+            continue
+        parts.append(f"=== {rel} ===\n\n{path.read_text(encoding='utf-8')}")
     return "\n\n".join(parts)
+
+
+def read_reference_file(cfg: NewsletterConfig, filename: str) -> str:
+    safe_name = Path(filename).name
+    path = ROOT / cfg.skill_dir / "references" / safe_name
+    allowed = {
+        "organisations.md",
+        "known-traps.md",
+        "spreadsheet-schema.md",
+        "template.md",
+    }
+    if safe_name not in allowed or not path.exists():
+        return f"[UNKNOWN REFERENCE FILE: {filename}]"
+    return path.read_text(encoding="utf-8")[:24000]
 
 
 SYSTEM_PROMPT_TEMPLATE = """You are an assistant that drafts Sam Fox's "{subject}" newsletter.
@@ -258,7 +281,7 @@ YOUR JOB:
 
 1. Call gmail_search with query `subject:"{subject_root}"` to find what's been featured recently.
 2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
-3. For every Tier 1 / core organisation in references/organisations.md, call web_fetch on its specific application URL and decide whether it is CURRENTLY OPEN today.
+3. Call read_reference_file for `organisations.md`, then for every Tier 1 / core organisation listed there, call web_fetch on its specific application URL and decide whether it is CURRENTLY OPEN today.
 4. For any Tier 2 / non-core program you think is likely to be open this cycle, also web_fetch it.
 5. When you have a verified list of currently-open programs, call submit_newsletter with the final structured payload.
 
@@ -330,6 +353,15 @@ def build_submit_tool_schema(cfg: NewsletterConfig) -> dict:
 
 COMMON_TOOLS = [
     {
+        "name": "read_reference_file",
+        "description": "Read one newsletter reference file, especially organisations.md.",
+        "input_schema": {
+            "type": "object",
+            "properties": {"filename": {"type": "string"}},
+            "required": ["filename"],
+        },
+    },
+    {
         "name": "gmail_search",
         "description": "Search Sam's Gmail. Returns a list of matching threads.",
         "input_schema": {
@@ -364,11 +396,13 @@ COMMON_TOOLS = [
 
 def run_tool(name: str, args: dict) -> str:
     try:
+        if name == "read_reference_file":
+            return "[CONFIG ERROR: read_reference_file needs newsletter context]"
         if name == "gmail_search":
             results = gmail_search(args["query"], args.get("max_results", 5))
-            return json.dumps([{"id": t["id"], "snippet": t.get("snippet", "")} for t in results])[:8000]
+            return json.dumps([{"id": t["id"], "snippet": t.get("snippet", "")} for t in results])[:4000]
         if name == "gmail_get_thread":
-            return gmail_get_thread(args["thread_id"])[:12000]
+            return gmail_get_thread(args["thread_id"])[:5000]
         if name == "web_fetch":
             return web_fetch(args["url"])
         return f"[Unknown tool: {name}]"
@@ -389,6 +423,9 @@ def run_agent(cfg: NewsletterConfig) -> dict:
     messages = [{"role": "user", "content": f"Please draft this month's {cfg.subject} newsletter."}]
 
     for step in range(80):
+        if step:
+            print(f"[{TODAY}] Waiting {CLAUDE_CALL_DELAY_SECONDS}s to stay under API rate limits...")
+            time.sleep(CLAUDE_CALL_DELAY_SECONDS)
         resp = client.messages.create(
             model=MODEL,
             max_tokens=8000,
@@ -413,7 +450,10 @@ def run_agent(cfg: NewsletterConfig) -> dict:
                         "content": "Newsletter submitted. Thank you.",
                     })
                 else:
-                    result = run_tool(block.name, block.input)
+                    if block.name == "read_reference_file":
+                        result = read_reference_file(cfg, block.input["filename"])
+                    else:
+                        result = run_tool(block.name, block.input)
                     tool_results.append({
                         "type": "tool_result",
                         "tool_use_id": block.id,
