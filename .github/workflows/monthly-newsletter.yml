@@ -28,15 +28,15 @@ jobs:
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           SAM_EMAIL: ${{ secrets.SAM_EMAIL }}
-          CLAUDE_MODEL: claude-3-5-haiku-20241022
+          CLAUDE_MODEL: claude-haiku-4-5-20251001
           PYTHONUTF8: "1"
           CLAUDE_CALL_DELAY_SECONDS: "20"
           MAX_AGENT_STEPS: "28"
           MAX_WEB_FETCHES: "75"
           MAX_OUTPUT_TOKENS: "4000"
           MAX_COST_USD: "4.50"
-          INPUT_COST_PER_MTOK: "0.80"
-          OUTPUT_COST_PER_MTOK: "4.00"
+          INPUT_COST_PER_MTOK: "1.00"
+          OUTPUT_COST_PER_MTOK: "5.00"
         run: python agent.py --newsletter economics-careers
 
       - name: Upload generated spreadsheet as artifact

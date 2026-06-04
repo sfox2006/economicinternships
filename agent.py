@@ -37,14 +37,14 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 # --- Configuration --------------------------------------------------------
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-3-5-haiku-20241022")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-4-5-20251001")
 CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "20"))
 MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "28"))
 MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "75"))
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "4000"))
 MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "4.50"))
-INPUT_COST_PER_MTOK = float(os.environ.get("INPUT_COST_PER_MTOK", "0.80"))
-OUTPUT_COST_PER_MTOK = float(os.environ.get("OUTPUT_COST_PER_MTOK", "4.00"))
+INPUT_COST_PER_MTOK = float(os.environ.get("INPUT_COST_PER_MTOK", "1.00"))
+OUTPUT_COST_PER_MTOK = float(os.environ.get("OUTPUT_COST_PER_MTOK", "5.00"))
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
