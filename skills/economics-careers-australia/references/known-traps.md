@@ -4,6 +4,14 @@ Employer-specific gotchas. **Read this file before finalising any draft.**
 
 ---
 
+## Role-type traps
+
+- **The trap**: Employers use inconsistent labels. "Vacationer", "Vacation Program", "Summer Internship", "Summer Analyst", and "Internship" can refer to the same broad penultimate-year pathway. "Analyst" can mean a graduate-entry analyst role or an experienced-hire role.
+- **Verification rule**: Use the employer's exact program title in `Program name`, then choose the closest spreadsheet `Type`. If an analyst job is open to graduates or early-career applicants, use `Analyst Job`; if it requires substantial experience, omit it.
+- **Do not miss these keywords**: internship, intern, graduate program, graduate job, graduate economist, analyst, research analyst, policy analyst, cadetship, cadet, vacation program, vacationer, summer vacation, summer analyst, industry placement, scholarship.
+
+---
+
 ## Treasury
 
 - **The trap**: Treasury runs multiple distinct programs that look similar but aren't — the Graduate Program has Economics, Tax, and Markets streams; there's also a separate Summer Vacation Program (penultimate-year) and an Indigenous Economic Cadetship. Different deadlines, different applicant pools.

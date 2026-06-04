@@ -301,7 +301,21 @@ def build_submit_tool_schema(cfg: NewsletterConfig) -> dict:
     program_props = {
         "organisation": {"type": "string"},
         "program_name": {"type": "string"},
-        "type": {"type": "string"},
+        "type": {
+            "type": "string",
+            "enum": [
+                "Graduate Program",
+                "Graduate Job",
+                "Analyst Job",
+                "Cadetship",
+                "Vacationer Program",
+                "Summer Vacation",
+                "Internship",
+                "Industry Placement",
+                "Scholarship",
+                "Other",
+            ],
+        },
         "deadline": {"type": "string"},
         "duration": {"type": "string"},
         "paid": {"type": "string"},

@@ -13,7 +13,7 @@ Every "Economics Careers Australia" newsletter is accompanied by an Excel spread
 | 1 | Sector | Fixed list | Federal Government / State Government / Banks & Investment Banks / Asset Managers & Super Funds / Economics Consultancies / Strategy & Big 4 Consulting / Think Tanks & Policy Institutes / Business Lobby Groups & Unions / Nonprofits & NGOs / International Organisations / Other |
 | 2 | Organisation | Text | Full name (e.g. "Reserve Bank of Australia") |
 | 3 | Program name | Text | Specific program (e.g. "2027 Graduate Program — Economist Stream") |
-| 4 | Type | Fixed list | Graduate Program / Cadetship / Summer Vacation / Internship / Industry Placement / Scholarship / Other |
+| 4 | Type | Fixed list | Graduate Program / Graduate Job / Analyst Job / Cadetship / Vacationer Program / Summer Vacation / Internship / Industry Placement / Scholarship / Other |
 | 5 | Deadline | Text | Specific date `DD Mon YYYY`, or one of: "Rolling", "Apply early", "Annual cycle — check live page", "Applications open". Never invent a deadline. |
 | 6 | Location | Text | "Sydney", "Melbourne", "Canberra", "Multiple locations", etc. |
 | 7 | Duration | Text | e.g. "12 months", "10-12 weeks", "Semester-long", "2 years rotational" |
@@ -27,7 +27,7 @@ Every "Economics Careers Australia" newsletter is accompanied by an Excel spread
 
 - **Only currently-open programs** are listed.
 - **One row per program** — Treasury Graduate Program and Treasury Summer Vacation are separate rows.
-- **Sort order**: Sector (in the order listed above), then Type (Graduate Programs first), then deadline (sooner first).
+- **Sort order**: Sector (in the order listed above), then Type (Graduate Programs and Graduate Jobs first, then Analyst Jobs, Cadetships, Internships/Vacationer programs, Industry Placements, Scholarships, and Other), then deadline (sooner first).
 - **Header row**: Bold, freeze top row, enable Excel auto-filter so users can sort/filter.
 
 ## Implementation

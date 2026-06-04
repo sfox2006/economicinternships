@@ -1,17 +1,17 @@
 ---
 name: economics-careers-australia
-description: Drafts Sam Fox's "Economics Careers Australia" newsletter — a roundup of currently-open internships and graduate programs for economics students and graduates in Australia, covering the private sector (banks, asset managers, economics consultancies, strategy firms), public sector (federal and state Treasury, RBA, ABS, Productivity Commission, regulators), think tanks, business lobby groups, unions, nonprofits, and international organisations based in Australia. Each newsletter includes a filterable spreadsheet attachment. Trigger whenever Sam asks to draft, build, update, or refresh an "Economics Careers" newsletter, asks for current economics internships or graduate programs in Australia, asks "what econ grad programs are open right now", or asks to add specific economics employers to a draft. Politically neutral; covers the full sector spectrum without ideological framing. Use this skill any time Sam mentions the phrase "Economics Careers" or references the regular economics-students-focused roundup.
+description: Drafts Sam Fox's "Economics Careers Australia" newsletter — a roundup of currently-open internships, graduate jobs, analyst jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships for economics students and graduates in Australia, covering the private sector (banks, asset managers, economics consultancies, strategy firms), public sector (federal and state Treasury, RBA, ABS, Productivity Commission, regulators), think tanks, business lobby groups, unions, nonprofits, and international organisations based in Australia. Each newsletter includes a filterable spreadsheet attachment. Trigger whenever Sam asks to draft, build, update, or refresh an "Economics Careers" newsletter, asks for current economics internships, graduate jobs, analyst roles, cadetships, or vacation programs in Australia, asks "what econ grad programs are open right now", or asks to add specific economics employers to a draft. Politically neutral; covers the full sector spectrum without ideological framing. Use this skill any time Sam mentions the phrase "Economics Careers" or references the regular economics-students-focused roundup.
 ---
 
 # Economics Careers Australia Newsletter
 
-A skill for drafting Sam Fox's recurring "Economics Careers Australia" newsletter. The newsletter goes to students studying or interested in economics and lists currently-open Australian internships and graduate programs across the full sector spectrum — politically neutral, not aligned to any ideological position.
+A skill for drafting Sam Fox's recurring "Economics Careers Australia" newsletter. The newsletter goes to students studying or interested in economics and lists currently-open Australian internships, graduate jobs, analyst jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships across the full sector spectrum — politically neutral, not aligned to any ideological position.
 
 ## Critical principles (do not skip)
 
-1. **Verify everything is genuinely open before listing it.** Application windows for economics grad programs and internships are tight and predictable per organisation — but they also shift cycles and pages. Verify each listing on the live page or careers portal before including.
+1. **Verify everything is genuinely open before listing it.** Application windows for economics grad programs, analyst roles, cadetships, vacation programs, and internships are tight and predictable per organisation — but they also shift cycles and pages. Verify each listing on the live page or careers portal before including.
 2. **Direct URL fetching beats general search.** Most major employers (Treasury, RBA, Macquarie, Big 4 banks) post on their careers portals with dated rounds. Go to the careers page, not Google.
-3. **Distinguish internships from graduate programs.** They have different applicant pools (penultimate vs final-year), different timelines, and different durations. The spreadsheet has a Type column for this — never list a graduate program under "Internship" or vice versa.
+3. **Distinguish role types clearly.** Internships/vacationer programs, cadetships, graduate jobs, analyst jobs, industry placements, and scholarships have different applicant pools, timelines, and durations. The spreadsheet has a Type column for this — never list a graduate role under "Internship" or an analyst role under "Graduate Program" unless the live page uses that wording.
 4. **Be specific about discipline.** Economics is broad — some roles want quantitative modelling, some want policy writing, some want financial markets analysis. Where the live page specifies, capture that in the description.
 5. **When uncertain, be honest.** Use "Apply early", "Rolling", "Annual cycle — check live page", or "Applications open" rather than guessing. Never invent a deadline.
 6. **Drop anything you cannot verify as open** by the planned send date.
@@ -39,10 +39,12 @@ Read `references/organisations.md` for the full list of target organisations gro
 - **Nonprofits**: World Vision, Oxfam, CARE, ACOSS
 - **International orgs in Australia**: OECD, World Bank, ADB
 
-For each candidate program, capture:
+Search live employer pages for all economics-relevant early-career entry points, including keywords such as `internship`, `intern`, `graduate program`, `graduate job`, `graduate economist`, `analyst`, `research analyst`, `policy analyst`, `cadetship`, `cadet`, `vacation program`, `vacationer`, `summer vacation`, `summer analyst`, `industry placement`, and `scholarship`.
+
+For each candidate program or role, capture:
 - Organisation
-- Program name (Graduate Program, Cadetship, Summer Internship, Vacation Program, Industry Placement, etc.)
-- Type (Internship / Graduate Program / Cadetship / Scholarship / Other)
+- Program name (Graduate Program, Analyst, Cadetship, Summer Internship, Vacationer Program, Industry Placement, etc.)
+- Type (Internship / Graduate Program / Graduate Job / Analyst Job / Cadetship / Vacationer Program / Industry Placement / Scholarship / Other)
 - Application status — only "open" entries make it into the newsletter and spreadsheet
 - Specific deadline if visible on the live page (otherwise: rolling, apply early, etc.)
 - Duration
@@ -84,7 +86,7 @@ Use `message_compose_v1` with `kind: email` and the subject. Use `present_files`
 
 ## Tone & style
 
-- Direct and factual — economics students respond to specifics (deadlines, pay, role focus) more than colour.
+- Direct and factual — economics students respond to specifics (deadlines, pay, role type, role focus) more than colour.
 - Each program gets 3–5 sentences. Don't pad.
 - Use specific deadlines where verified; honest hedges where not.
 - Section header format: `🏛️ FEDERAL GOVERNMENT & REGULATORS` (emoji, space, all caps).
