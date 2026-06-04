@@ -460,13 +460,27 @@ def run_agent(cfg: NewsletterConfig) -> dict:
     messages = [{"role": "user", "content": f"Please draft this month's {cfg.subject} newsletter."}]
     web_fetches = 0
     estimated_cost = 0.0
+    budget_warning_sent = False
 
     for step in range(MAX_AGENT_STEPS):
-        if estimated_cost >= MAX_COST_USD:
+        if estimated_cost >= MAX_COST_USD and budget_warning_sent:
             raise RuntimeError(
                 f"Cost budget reached before a draft was submitted: "
                 f"${estimated_cost:.2f} USD >= ${MAX_COST_USD:.2f} USD."
             )
+        if estimated_cost >= MAX_COST_USD * 0.85 and not budget_warning_sent:
+            messages.append({
+                "role": "user",
+                "content": (
+                    f"You are near the run cost budget (${estimated_cost:.2f} USD used "
+                    f"of ${MAX_COST_USD:.2f} USD). Stop researching now. Submit the "
+                    "best newsletter using only programs you have already verified as "
+                    "currently open. Do not call web_fetch again unless absolutely "
+                    "required to complete an already verified listing."
+                ),
+            })
+            budget_warning_sent = True
+
         if step:
             print(f"[{TODAY}] Waiting {CLAUDE_CALL_DELAY_SECONDS}s to stay under API rate limits...")
             time.sleep(CLAUDE_CALL_DELAY_SECONDS)
