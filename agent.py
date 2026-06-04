@@ -24,7 +24,7 @@ from email.mime.text import MIMEText
 from email import encoders
 from pathlib import Path
 
-from anthropic import Anthropic
+from anthropic import Anthropic, RateLimitError
 from google.auth.transport.requests import Request as GoogleRequest
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
@@ -38,13 +38,16 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
-CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "20"))
+CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "75"))
 MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "65"))
 MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "250"))
-MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "12000"))
+MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "8000"))
 MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "10.00"))
 INPUT_COST_PER_MTOK = float(os.environ.get("INPUT_COST_PER_MTOK", "3.00"))
 OUTPUT_COST_PER_MTOK = float(os.environ.get("OUTPUT_COST_PER_MTOK", "15.00"))
+MAX_FETCH_CHARS = int(os.environ.get("MAX_FETCH_CHARS", "1200"))
+RATE_LIMIT_RETRY_SECONDS = int(os.environ.get("RATE_LIMIT_RETRY_SECONDS", "95"))
+KEEP_RECENT_TOOL_RESULT_MESSAGES = int(os.environ.get("KEEP_RECENT_TOOL_RESULT_MESSAGES", "4"))
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -142,7 +145,7 @@ def send_notification_email(drafts: list[dict]):
 
 # --- Web fetch ------------------------------------------------------------
 
-def web_fetch(url: str, max_chars: int = 2500) -> str:
+def web_fetch(url: str, max_chars: int = MAX_FETCH_CHARS) -> str:
     try:
         req = urllib.request.Request(
             url,
@@ -493,6 +496,26 @@ def response_cost_usd(resp) -> float:
     return input_cost + cache_read_cost + output_cost
 
 
+def compact_old_tool_results(messages: list[dict]) -> None:
+    tool_result_message_indices = [
+        i for i, msg in enumerate(messages)
+        if msg.get("role") == "user"
+        and isinstance(msg.get("content"), list)
+        and any(
+            isinstance(item, dict) and item.get("type") == "tool_result"
+            for item in msg["content"]
+        )
+    ]
+    old_indices = tool_result_message_indices[:-KEEP_RECENT_TOOL_RESULT_MESSAGES]
+    for idx in old_indices:
+        for item in messages[idx]["content"]:
+            if not isinstance(item, dict) or item.get("type") != "tool_result":
+                continue
+            content = item.get("content")
+            if isinstance(content, str) and len(content) > 500:
+                item["content"] = content[:500] + "\n\n[Older tool result truncated to stay under rate limits.]"
+
+
 def run_agent(cfg: NewsletterConfig) -> dict:
     client = Anthropic()
     subject_root = cfg.subject.rstrip("!")
@@ -531,13 +554,23 @@ def run_agent(cfg: NewsletterConfig) -> dict:
             print(f"[{TODAY}] Waiting {CLAUDE_CALL_DELAY_SECONDS}s to stay under API rate limits...")
             time.sleep(CLAUDE_CALL_DELAY_SECONDS)
         print(f"[{TODAY}] Agent step {step + 1}/{MAX_AGENT_STEPS}...")
-        resp = client.messages.create(
-            model=MODEL,
-            max_tokens=MAX_OUTPUT_TOKENS,
-            system=system,
-            tools=tools,
-            messages=messages,
-        )
+        compact_old_tool_results(messages)
+        for attempt in range(3):
+            try:
+                resp = client.messages.create(
+                    model=MODEL,
+                    max_tokens=MAX_OUTPUT_TOKENS,
+                    system=system,
+                    tools=tools,
+                    messages=messages,
+                )
+                break
+            except RateLimitError:
+                if attempt == 2:
+                    raise
+                wait = RATE_LIMIT_RETRY_SECONDS * (attempt + 1)
+                print(f"[{TODAY}] Anthropic rate limit hit. Waiting {wait}s before retry...")
+                time.sleep(wait)
         estimated_cost += response_cost_usd(resp)
         print(f"[{TODAY}] Estimated Claude spend: ${estimated_cost:.2f} USD / ${MAX_COST_USD:.2f} USD")
         messages.append({"role": "assistant", "content": resp.content})
