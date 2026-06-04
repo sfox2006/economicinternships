@@ -206,11 +206,65 @@ Most think tank roles are research assistant / intern positions rather than stru
 - **Per Capita** — Internships (left-leaning) — https://percapita.org.au/work-with-us/
 - **The Australia Institute** — Internships (left-leaning, climate/economic focus) — https://australiainstitute.org.au/about-us/jobs/
 - **e61 Institute** — Research roles (newer, applied microeconomics focus, RBA/PC alumni) — https://e61.in/careers
-- **Australian National University Crawford School of Public Policy** — Internships and research positions — https://crawford.anu.edu.au/about/employment
-- **Melbourne Institute of Applied Economic and Social Research** (University of Melbourne) — Research assistant positions — https://melbourneinstitute.unimelb.edu.au/about/careers
 - **Australian Institute of Family Studies** — Research roles — https://aifs.gov.au/careers
 - **Centre for Policy Development (CPD)** — Internships — https://cpd.org.au/about/careers/
 - **Australian Strategic Policy Institute (ASPI)** — Internships (security/economics intersection) — https://www.aspi.org.au/about-aspi/employment
+
+---
+
+## 🎓 Universities & Research Institutes
+
+Universities can be useful for economics students through research assistant roles, casual academic/tutoring work, internships, cadetships, graduate programs, analyst/research officer roles, scholarships, and policy-school research jobs. These roles are often advertised on university jobs boards rather than student program pages, so search for economics, research assistant, analyst, tutor, policy, data, econometrics, and evaluation keywords.
+
+### Australian universities and economics schools
+
+- **Australian National University (ANU)** — Research assistant, tutor, analyst, internships, cadetships and professional staff graduate roles across CBE, Crawford School, Tax and Transfer Policy Institute, and research centres — https://jobs.anu.edu.au/
+- **ANU Crawford School of Public Policy** — Internships, research assistant and policy research positions — https://crawford.anu.edu.au/about/employment
+- **University of Sydney** — Economics, business school, public policy, research assistant, tutor and professional staff graduate roles — https://www.sydney.edu.au/about-us/careers-at-sydney.html
+- **University of Melbourne** — Economics, Melbourne Institute, business school, research assistant, tutor and analyst roles — https://jobs.unimelb.edu.au/
+- **Melbourne Institute of Applied Economic and Social Research** — Research assistant, research fellow and data/economics roles — https://melbourneinstitute.unimelb.edu.au/about/careers
+- **Monash University** — Economics, econometrics, business school, research assistant, tutor and policy research roles — https://careers.pageuppeople.com/513/cw/en/listing/
+- **University of New South Wales (UNSW)** — UNSW Business School, economics, tax/policy, research assistant and tutor roles — https://www.jobs.unsw.edu.au/
+- **UNSW Social Policy Research Centre** — Research assistant, evaluation, policy and applied economics roles — https://www.unsw.edu.au/research/sprc/about-us/work-with-us
+- **University of Queensland (UQ)** — School of Economics, business school, research assistant, tutor and analyst roles — https://careers.uq.edu.au/
+- **Queensland University of Technology (QUT)** — Economics, business, data, policy, research assistant and professional roles — https://www.qut.edu.au/jobs
+- **Griffith University** — Economics, policy, business, research assistant and tutor roles — https://www.griffith.edu.au/jobs
+- **University of Adelaide** — Economics, business school, research assistant and tutor roles — https://careers.adelaide.edu.au/
+- **University of South Australia** — Economics, business, policy, research assistant and analyst roles — https://workingatunisa.nga.net.au/
+- **University of Western Australia (UWA)** — Economics, business school, research assistant and tutor roles — https://external.jobs.uwa.edu.au/
+- **Curtin University** — Economics, business, data, policy, research assistant and professional roles — https://www.curtin.edu.au/about/jobs/
+- **University of Tasmania** — Economics, business, policy, research assistant and tutor roles — https://www.utas.edu.au/jobs
+- **University of Canberra** — Economics, public policy, research assistant and professional roles — https://www.canberra.edu.au/about-uc/work-at-uc
+- **Charles Darwin University** — Economics, policy, regional development and research roles — https://www.cdu.edu.au/about-cdu/careers-cdu
+- **RMIT University** — Economics, business, policy, data and research assistant roles — https://www.rmit.edu.au/careers
+- **Deakin University** — Economics, business, policy, research assistant and professional roles — https://www.deakin.edu.au/about-deakin/careers-at-deakin
+- **La Trobe University** — Economics, business, policy, research assistant and tutor roles — https://www.latrobe.edu.au/jobs
+- **Swinburne University of Technology** — Economics, business, social impact and data/policy research roles — https://www.swinburne.edu.au/about/jobs/
+- **Macquarie University** — Applied finance, economics, business analytics, research assistant and tutor roles — https://mq.wd3.myworkdayjobs.com/CareersatMQ
+- **University of Technology Sydney (UTS)** — Economics, business, policy, data science and research assistant roles — https://www.uts.edu.au/about/jobs-uts
+- **Western Sydney University** — Economics, policy, business, research assistant and professional roles — https://www.westernsydney.edu.au/jobs
+- **University of Wollongong** — Economics, business, policy, research assistant and graduate roles — https://www.uow.edu.au/about/jobs/
+- **University of Newcastle** — Economics, business, policy, research assistant and professional roles — https://www.newcastle.edu.au/about-uon/jobs-at-uon
+- **Australian Catholic University (ACU)** — Policy, education economics, research assistant and professional roles — https://www.acu.edu.au/about-acu/careers-at-acu
+- **Bond University** — Economics, business, finance, research assistant and tutor roles — https://bond.edu.au/jobs
+- **Flinders University** — Economics, business, policy, research assistant and professional roles — https://www.flinders.edu.au/employment
+- **Charles Sturt University** — Regional economics, public policy, business and research roles — https://www.csu.edu.au/jobs
+- **Southern Cross University** — Regional economics, business, policy and research roles — https://www.scu.edu.au/about/jobs-at-scu/
+- **James Cook University** — Regional economics, development, business and research roles — https://www.jcu.edu.au/careers-at-jcu
+- **University of New England (UNE)** — Agricultural/resource economics, regional development, research assistant and tutor roles — https://www.une.edu.au/jobs-at-une
+- **Federation University Australia** — Regional economics, business, policy, research and professional roles — https://federation.edu.au/about-us/careers-at-federation
+- **Victoria University** — Mitchell Institute, economics, policy, research assistant and professional roles — https://www.vu.edu.au/about-vu/careers-at-vu
+
+### University research centres relevant to economics
+
+- **Tax and Transfer Policy Institute (ANU)** — Tax, transfer, labour market and microsimulation research roles — https://taxpolicy.crawford.anu.edu.au/
+- **Centre for Applied Macroeconomic Analysis (ANU)** — Macroeconomics and applied economic research roles — https://cama.crawford.anu.edu.au/
+- **Melbourne Institute** — Applied economics, labour, household survey and policy evaluation roles — https://melbourneinstitute.unimelb.edu.au/about/careers
+- **Institute for Social Science Research (UQ)** — Evaluation, policy, labour market and social economics research roles — https://issr.uq.edu.au/
+- **Centre for Social Research and Methods (ANU)** — Survey, evaluation, policy and quantitative research roles — https://csrm.cass.anu.edu.au/
+- **Centre for Health Economics (Monash)** — Health economics research assistant and analyst roles — https://www.monash.edu/business/che
+- **Centre for Social Impact** — Social impact, evaluation, nonprofit economics and policy research roles across university partners — https://www.csi.edu.au/about/jobs/
+- **BehaviourWorks Australia (Monash)** — Behavioural economics, evaluation, policy and research roles — https://www.behaviourworksaustralia.org/
 
 ---
 

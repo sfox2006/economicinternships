@@ -1,6 +1,6 @@
 ---
 name: economics-careers-australia
-description: Drafts Sam Fox's "Economics Careers Australia" newsletter — a roundup of currently-open internships, graduate jobs, analyst jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships for economics students and graduates in Australia, covering the private sector (banks, asset managers, economics consultancies, strategy firms), public sector (federal and state Treasury, RBA, ABS, Productivity Commission, regulators), think tanks, business lobby groups, unions, nonprofits, and international organisations based in Australia. Each newsletter includes a filterable spreadsheet attachment. Trigger whenever Sam asks to draft, build, update, or refresh an "Economics Careers" newsletter, asks for current economics internships, graduate jobs, analyst roles, cadetships, or vacation programs in Australia, asks "what econ grad programs are open right now", or asks to add specific economics employers to a draft. Politically neutral; covers the full sector spectrum without ideological framing. Use this skill any time Sam mentions the phrase "Economics Careers" or references the regular economics-students-focused roundup.
+description: Drafts Sam Fox's "Economics Careers Australia" newsletter — a roundup of currently-open internships, graduate jobs, analyst jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships for economics students and graduates in Australia, covering the private sector (banks, asset managers, economics consultancies, strategy firms), public sector (federal and state Treasury, RBA, ABS, Productivity Commission, regulators), think tanks, business lobby groups, unions, universities, research institutes, nonprofits, and international organisations based in Australia. Each newsletter includes a filterable spreadsheet attachment. Trigger whenever Sam asks to draft, build, update, or refresh an "Economics Careers" newsletter, asks for current economics internships, graduate jobs, analyst roles, cadetships, or vacation programs in Australia, asks "what econ grad programs are open right now", or asks to add specific economics employers to a draft. Politically neutral; covers the full sector spectrum without ideological framing. Use this skill any time Sam mentions the phrase "Economics Careers" or references the regular economics-students-focused roundup.
 ---
 
 # Economics Careers Australia Newsletter
@@ -36,6 +36,7 @@ Read `references/organisations.md` for the full list of target organisations gro
 - **Strategy and Big 4 consulting**: McKinsey, Bain, BCG, Deloitte, PwC, EY, KPMG
 - **Think tanks**: Grattan, CEDA, Lowy, CIS, IPA, Mitchell, Australia Institute, Per Capita
 - **Business lobby groups and unions**: BCA, ACCI, Ai Group, MCA, NFF, ACTU, state labour councils, major national unions
+- **Universities and research institutes**: economics schools, business schools, public policy schools, research centres, RA roles, tutoring, internships, cadetships, and graduate programs
 - **Nonprofits**: World Vision, Oxfam, CARE, ACOSS
 - **International orgs in Australia**: OECD, World Bank, ADB
 
@@ -49,7 +50,7 @@ For each candidate program or role, capture:
 - Specific deadline if visible on the live page (otherwise: rolling, apply early, etc.)
 - Duration
 - Paid? (Yes — amount/grade; No — rare for econ roles)
-- Sector (Federal Government / State Government / Banks & Investment Banks / Asset Managers & Super Funds / Economics Consultancies / Strategy & Big 4 Consulting / Think Tanks & Policy Institutes / Business Lobby Groups & Unions / Nonprofits & NGOs / International Organisations)
+- Sector (Federal Government / State Government / Banks & Investment Banks / Asset Managers & Super Funds / Economics Consultancies / Strategy & Big 4 Consulting / Think Tanks & Policy Institutes / Business Lobby Groups & Unions / Universities & Research Institutes / Nonprofits & NGOs / International Organisations)
 - Location (Canberra / Sydney / Melbourne / Multiple / etc.)
 - Eligibility quirks (Australian citizenship required? Final-year only? Honours required?)
 - A short description paragraph (3–5 sentences)
@@ -71,8 +72,9 @@ Read `references/template.md`. Subject is `Economics Careers Australia!`. Sectio
 6. 🧠 Strategy & Big 4 Consulting
 7. 🔬 Think Tanks
 8. 📣 Business Lobby Groups & Unions
-9. 🌱 Nonprofits
-10. 🌐 International Organisations
+9. 🎓 Universities & Research Institutes
+10. 🌱 Nonprofits
+11. 🌐 International Organisations
 
 Skip any section with no currently-open programs.
 
