@@ -38,7 +38,9 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
-CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "65"))
+CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "30"))
+MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "35"))
+MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "70"))
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -281,9 +283,10 @@ YOUR JOB:
 
 1. Call gmail_search with query `subject:"{subject_root}"` to find what's been featured recently.
 2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
-3. Call read_reference_file for `organisations.md`, then for every Tier 1 / core organisation listed there, call web_fetch on its specific application URL and decide whether it is CURRENTLY OPEN today.
-4. For any Tier 2 / non-core program you think is likely to be open this cycle, also web_fetch it.
-5. When you have a verified list of currently-open programs, call submit_newsletter with the final structured payload.
+3. Call read_reference_file for `organisations.md`, then run a bounded high-yield check of likely currently-open programs. Do not try to exhaustively crawl every organisation in one run.
+4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, analyst jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates.
+5. Stop once you have a useful verified set across the main sections. It is better to submit 15-35 accurate open listings than to keep researching indefinitely.
+6. When you have a verified list of currently-open programs, call submit_newsletter with the final structured payload.
 
 CRITICAL RULES:
 - Closed programs are EXCLUDED — not in the email body, not in the spreadsheet.
@@ -291,6 +294,7 @@ CRITICAL RULES:
 - Never invent a deadline. Use the hedging language from template.md.
 - Do not use the word "genuinely".
 - Match the section order, type order, header format, and tone from template.md.
+- Use web_fetch efficiently. Request multiple tool calls in one assistant turn where possible, and do not exceed the available web-fetch budget.
 
 Once you call submit_newsletter you are done.
 """
@@ -435,11 +439,13 @@ def run_agent(cfg: NewsletterConfig) -> dict:
     )
     tools = COMMON_TOOLS + [build_submit_tool_schema(cfg)]
     messages = [{"role": "user", "content": f"Please draft this month's {cfg.subject} newsletter."}]
+    web_fetches = 0
 
-    for step in range(80):
+    for step in range(MAX_AGENT_STEPS):
         if step:
             print(f"[{TODAY}] Waiting {CLAUDE_CALL_DELAY_SECONDS}s to stay under API rate limits...")
             time.sleep(CLAUDE_CALL_DELAY_SECONDS)
+        print(f"[{TODAY}] Agent step {step + 1}/{MAX_AGENT_STEPS}...")
         resp = client.messages.create(
             model=MODEL,
             max_tokens=8000,
@@ -466,6 +472,15 @@ def run_agent(cfg: NewsletterConfig) -> dict:
                 else:
                     if block.name == "read_reference_file":
                         result = read_reference_file(cfg, block.input["filename"])
+                    elif block.name == "web_fetch":
+                        web_fetches += 1
+                        if web_fetches > MAX_WEB_FETCHES:
+                            result = (
+                                "[WEB FETCH BUDGET EXHAUSTED] Submit the best verified "
+                                "newsletter now using only already-verified open programs."
+                            )
+                        else:
+                            result = run_tool(block.name, block.input)
                     else:
                         result = run_tool(block.name, block.input)
                     tool_results.append({

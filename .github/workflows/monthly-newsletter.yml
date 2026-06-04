@@ -30,6 +30,9 @@ jobs:
           SAM_EMAIL: ${{ secrets.SAM_EMAIL }}
           CLAUDE_MODEL: claude-sonnet-4-6
           PYTHONUTF8: "1"
+          CLAUDE_CALL_DELAY_SECONDS: "30"
+          MAX_AGENT_STEPS: "35"
+          MAX_WEB_FETCHES: "70"
         run: python agent.py --newsletter economics-careers
 
       - name: Upload generated spreadsheet as artifact
