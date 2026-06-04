@@ -36,7 +36,7 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 # --- Configuration --------------------------------------------------------
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-opus-4-5-20250929")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-20250514")
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -471,6 +471,8 @@ def main():
 
     send_notification_email(results)
     print(f"[{TODAY}] Notification email sent to {SAM_EMAIL}.")
+    if any(result.get("error") for result in results):
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
