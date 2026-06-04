@@ -31,10 +31,10 @@ jobs:
           CLAUDE_MODEL: claude-sonnet-4-6
           PYTHONUTF8: "1"
           CLAUDE_CALL_DELAY_SECONDS: "20"
-          MAX_AGENT_STEPS: "28"
-          MAX_WEB_FETCHES: "75"
+          MAX_AGENT_STEPS: "65"
+          MAX_WEB_FETCHES: "250"
           MAX_OUTPUT_TOKENS: "12000"
-          MAX_COST_USD: "6.75"
+          MAX_COST_USD: "10.00"
           INPUT_COST_PER_MTOK: "3.00"
           OUTPUT_COST_PER_MTOK: "15.00"
         run: python agent.py --newsletter economics-careers
