@@ -1,0 +1,477 @@
+"""
+Economics Careers Australia newsletter agent.
+
+Drafts the Economics Careers Australia newsletter using a Claude agent loop.
+Saves the draft to Gmail with the spreadsheet attached
+and emails Sam a notification — never sends.
+
+Usage:
+    python agent.py --newsletter economics-careers
+"""
+from __future__ import annotations
+
+import argparse
+import base64
+import json
+import os
+import re
+import urllib.request
+from datetime import date
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email import encoders
+from pathlib import Path
+
+from anthropic import Anthropic
+from google.auth.transport.requests import Request as GoogleRequest
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+
+from configs import ALL_NEWSLETTERS, NewsletterConfig
+
+
+# --- Configuration --------------------------------------------------------
+
+SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-opus-4-5-20250929")
+ROOT = Path(__file__).parent
+OUTPUT_DIR = ROOT / "output"
+OUTPUT_DIR.mkdir(exist_ok=True)
+TODAY = date.today().isoformat()
+
+GMAIL_SCOPES = [
+    "https://www.googleapis.com/auth/gmail.compose",
+    "https://www.googleapis.com/auth/gmail.send",
+    "https://www.googleapis.com/auth/gmail.readonly",
+]
+
+
+# --- Gmail helpers --------------------------------------------------------
+
+def gmail_service():
+    creds = Credentials(
+        token=None,
+        refresh_token=os.environ["GMAIL_REFRESH_TOKEN"],
+        client_id=os.environ["GMAIL_CLIENT_ID"],
+        client_secret=os.environ["GMAIL_CLIENT_SECRET"],
+        token_uri="https://oauth2.googleapis.com/token",
+        scopes=GMAIL_SCOPES,
+    )
+    creds.refresh(GoogleRequest())
+    return build("gmail", "v1", credentials=creds, cache_discovery=False)
+
+
+def gmail_search(query: str, max_results: int = 5) -> list[dict]:
+    svc = gmail_service()
+    res = svc.users().threads().list(userId="me", q=query, maxResults=max_results).execute()
+    return res.get("threads", [])
+
+
+def gmail_get_thread(thread_id: str) -> str:
+    svc = gmail_service()
+    thread = svc.users().threads().get(userId="me", id=thread_id, format="full").execute()
+    snippets = []
+    for msg in thread.get("messages", []):
+        snippets.append(extract_body(msg["payload"]))
+    return "\n\n---\n\n".join(snippets)
+
+
+def extract_body(payload) -> str:
+    if payload.get("body", {}).get("data"):
+        return base64.urlsafe_b64decode(payload["body"]["data"]).decode("utf-8", "replace")
+    parts = payload.get("parts", []) or []
+    out = []
+    for p in parts:
+        if p.get("mimeType") == "text/plain":
+            out.append(extract_body(p))
+        elif p.get("parts"):
+            out.append(extract_body(p))
+    return "\n".join(out)
+
+
+def create_gmail_draft(subject: str, body: str, attachment_path: Path | None = None) -> str:
+    msg = MIMEMultipart()
+    msg["to"] = SAM_EMAIL
+    msg["from"] = SAM_EMAIL
+    msg["subject"] = subject
+    msg.attach(MIMEText(body, "plain", "utf-8"))
+    if attachment_path and attachment_path.exists():
+        part = MIMEBase("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        part.set_payload(attachment_path.read_bytes())
+        encoders.encode_base64(part)
+        part.add_header("Content-Disposition", f'attachment; filename="{attachment_path.name}"')
+        msg.attach(part)
+    raw = base64.urlsafe_b64encode(msg.as_bytes()).decode("utf-8")
+    svc = gmail_service()
+    draft = svc.users().drafts().create(userId="me", body={"message": {"raw": raw}}).execute()
+    return draft["id"]
+
+
+def send_notification_email(drafts: list[dict]):
+    """drafts is a list of {newsletter, draft_id, count} entries."""
+    lines = [f"Your monthly newsletter drafts are ready for review.\n"]
+    for d in drafts:
+        if d.get("error"):
+            lines.append(f"  ❌ {d['newsletter']}: failed — {d['error']}")
+        else:
+            url = f"https://mail.google.com/mail/u/0/#drafts/{d['draft_id']}"
+            lines.append(f"  ✅ {d['newsletter']}: {d['count']} programs — {url}")
+    lines.append(f"\nDate generated: {TODAY}")
+    lines.append("Open Gmail Drafts to review, edit, and send when ready.")
+    body = "\n".join(lines)
+
+    msg = MIMEText(body, "plain", "utf-8")
+    msg["to"] = SAM_EMAIL
+    msg["from"] = SAM_EMAIL
+    msg["subject"] = f"[Bot] Newsletter drafts ready — {TODAY}"
+    raw = base64.urlsafe_b64encode(msg.as_bytes()).decode("utf-8")
+    svc = gmail_service()
+    svc.users().messages().send(userId="me", body={"raw": raw}).execute()
+
+
+# --- Web fetch ------------------------------------------------------------
+
+def web_fetch(url: str, max_chars: int = 8000) -> str:
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; SamNewsletterBot/1.0)"},
+        )
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = resp.read(200_000).decode("utf-8", "replace")
+        text = re.sub(r"<script[^>]*>.*?</script>", "", data, flags=re.S | re.I)
+        text = re.sub(r"<style[^>]*>.*?</style>", "", text, flags=re.S | re.I)
+        text = re.sub(r"<[^>]+>", " ", text)
+        text = re.sub(r"\s+", " ", text).strip()
+        return text[:max_chars]
+    except Exception as exc:
+        return f"[FETCH ERROR: {exc}]"
+
+
+# --- Spreadsheet ----------------------------------------------------------
+
+def build_spreadsheet(programs: list[dict], out_path: Path, cfg: NewsletterConfig):
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Open Programs"
+
+    ws.append(cfg.spreadsheet_headers)
+
+    header_font = Font(name="Calibri", bold=True, color="FFFFFF", size=11)
+    header_fill = PatternFill("solid", start_color="305496")
+    header_align = Alignment(horizontal="left", vertical="center", wrap_text=True)
+    thin = Side(border_style="thin", color="999999")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+    for c in range(1, len(cfg.spreadsheet_headers) + 1):
+        cell = ws.cell(row=1, column=c)
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = header_align
+        cell.border = border
+
+    data_align = Alignment(horizontal="left", vertical="top", wrap_text=True)
+    data_font = Font(name="Calibri", size=11)
+    for p in programs:
+        ws.append([p.get(field, "") for field in cfg.spreadsheet_field_order])
+
+    for r in range(2, len(programs) + 2):
+        for c in range(1, len(cfg.spreadsheet_headers) + 1):
+            cell = ws.cell(row=r, column=c)
+            cell.font = data_font
+            cell.alignment = data_align
+            cell.border = border
+
+    for col, w in cfg.column_widths.items():
+        ws.column_dimensions[col].width = w
+
+    ws.row_dimensions[1].height = 30
+    for r in range(2, len(programs) + 2):
+        ws.row_dimensions[r].height = 50
+
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = ws.dimensions
+    wb.save(out_path)
+
+
+# --- Email body assembly --------------------------------------------------
+
+def build_email_body(payload: dict, cfg: NewsletterConfig) -> str:
+    intro = payload.get("intro_block", "").strip()
+    closing = payload.get("closing_block", "").strip()
+    programs = payload.get("programs", [])
+
+    grouped: dict[str, list[dict]] = {}
+    for p in programs:
+        key = p.get(cfg.section_field, "Other")
+        grouped.setdefault(key, []).append(p)
+
+    sections = []
+    seen = set()
+    for sec_name in cfg.section_order:
+        if sec_name in grouped:
+            sections.append(format_section(sec_name, grouped[sec_name], cfg))
+            seen.add(sec_name)
+    for sec_name, items in grouped.items():
+        if sec_name not in seen:
+            sections.append(format_section(sec_name, items, cfg))
+
+    return intro + "\n\n---\n\n" + "\n\n---\n\n".join(sections) + "\n\n---\n\n" + closing
+
+
+def format_section(name: str, items: list[dict], cfg: NewsletterConfig) -> str:
+    emoji = cfg.section_emojis.get(name, "🌐")
+    header = f"{emoji} {name.upper()}"
+    blocks = [header, ""]
+    for p in items:
+        blocks.append(f"{p['organisation']} — {p['program_name']} | {p['deadline']}")
+        blocks.append("")
+        blocks.append(p["description_paragraph"].strip())
+        blocks.append("")
+        blocks.append(p["url"])
+        blocks.append("")
+    return "\n".join(blocks).rstrip()
+
+
+# --- Agent loop -----------------------------------------------------------
+
+def load_skill(cfg: NewsletterConfig) -> str:
+    skill_dir = ROOT / cfg.skill_dir
+    parts = []
+    for path in sorted(skill_dir.rglob("*.md")):
+        rel = path.relative_to(skill_dir)
+        parts.append(f"=== {rel} ===\n\n{path.read_text()}")
+    return "\n\n".join(parts)
+
+
+SYSTEM_PROMPT_TEMPLATE = """You are an assistant that drafts Sam Fox's "{subject}" newsletter.
+
+Below are the skill files that define exactly how to do this. Follow them carefully.
+
+{skill_content}
+
+Today's date is {today}.
+
+YOUR JOB:
+
+1. Call gmail_search with query `subject:"{subject_root}"` to find what's been featured recently.
+2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
+3. For every Tier 1 / core organisation in references/organisations.md, call web_fetch on its specific application URL and decide whether it is CURRENTLY OPEN today.
+4. For any Tier 2 / non-core program you think is likely to be open this cycle, also web_fetch it.
+5. When you have a verified list of currently-open programs, call submit_newsletter with the final structured payload.
+
+CRITICAL RULES:
+- Closed programs are EXCLUDED — not in the email body, not in the spreadsheet.
+- When uncertain whether a program is open, OMIT IT. Better a shorter accurate newsletter than a long one with broken listings.
+- Never invent a deadline. Use the hedging language from template.md.
+- Do not use the word "genuinely".
+- Match the section order, type order, header format, and tone from template.md.
+
+Once you call submit_newsletter you are done.
+"""
+
+
+def build_submit_tool_schema(cfg: NewsletterConfig) -> dict:
+    """Build the submit_newsletter tool schema dynamically per newsletter."""
+    program_props = {
+        "organisation": {"type": "string"},
+        "program_name": {"type": "string"},
+        "type": {"type": "string"},
+        "deadline": {"type": "string"},
+        "duration": {"type": "string"},
+        "paid": {"type": "string"},
+        "notes": {"type": "string"},
+        "url": {"type": "string"},
+        "description_paragraph": {"type": "string"},
+    }
+    required = ["organisation", "program_name", "type", "deadline",
+                "duration", "paid", "url", "description_paragraph"]
+
+    if cfg.section_field == "country":
+        program_props["country"] = {"type": "string"}
+        program_props["international"] = {
+            "type": "string",
+            "enum": ["Yes", "No", "Some restrictions"],
+        }
+        required += ["country", "international"]
+    else:
+        program_props["sector"] = {"type": "string", "enum": cfg.section_order + ["Other"]}
+        program_props["location"] = {"type": "string"}
+        program_props["citizenship"] = {
+            "type": "string",
+            "enum": ["Yes", "No", "Some restrictions"],
+        }
+        program_props["year_of_study"] = {"type": "string"}
+        required += ["sector", "location", "citizenship", "year_of_study"]
+
+    return {
+        "name": "submit_newsletter",
+        "description": "Submit the final newsletter payload. Call this exactly once when done.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "intro_block": {"type": "string"},
+                "programs": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": program_props,
+                        "required": required,
+                    },
+                },
+                "closing_block": {"type": "string"},
+            },
+            "required": ["intro_block", "programs", "closing_block"],
+        },
+    }
+
+
+COMMON_TOOLS = [
+    {
+        "name": "gmail_search",
+        "description": "Search Sam's Gmail. Returns a list of matching threads.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string"},
+                "max_results": {"type": "integer", "default": 5},
+            },
+            "required": ["query"],
+        },
+    },
+    {
+        "name": "gmail_get_thread",
+        "description": "Read full plaintext body of a Gmail thread.",
+        "input_schema": {
+            "type": "object",
+            "properties": {"thread_id": {"type": "string"}},
+            "required": ["thread_id"],
+        },
+    },
+    {
+        "name": "web_fetch",
+        "description": "Fetch the visible text of a web page. Use for verifying live application pages.",
+        "input_schema": {
+            "type": "object",
+            "properties": {"url": {"type": "string"}},
+            "required": ["url"],
+        },
+    },
+]
+
+
+def run_tool(name: str, args: dict) -> str:
+    try:
+        if name == "gmail_search":
+            results = gmail_search(args["query"], args.get("max_results", 5))
+            return json.dumps([{"id": t["id"], "snippet": t.get("snippet", "")} for t in results])[:8000]
+        if name == "gmail_get_thread":
+            return gmail_get_thread(args["thread_id"])[:12000]
+        if name == "web_fetch":
+            return web_fetch(args["url"])
+        return f"[Unknown tool: {name}]"
+    except Exception as exc:
+        return f"[TOOL ERROR: {exc}]"
+
+
+def run_agent(cfg: NewsletterConfig) -> dict:
+    client = Anthropic()
+    subject_root = cfg.subject.rstrip("!")
+    system = SYSTEM_PROMPT_TEMPLATE.format(
+        subject=cfg.subject,
+        subject_root=subject_root,
+        skill_content=load_skill(cfg),
+        today=TODAY,
+    )
+    tools = COMMON_TOOLS + [build_submit_tool_schema(cfg)]
+    messages = [{"role": "user", "content": f"Please draft this month's {cfg.subject} newsletter."}]
+
+    for step in range(80):
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=8000,
+            system=system,
+            tools=tools,
+            messages=messages,
+        )
+        messages.append({"role": "assistant", "content": resp.content})
+
+        if resp.stop_reason != "tool_use":
+            raise RuntimeError(f"Agent stopped without submitting. stop_reason={resp.stop_reason}")
+
+        tool_results = []
+        submitted = None
+        for block in resp.content:
+            if block.type == "tool_use":
+                if block.name == "submit_newsletter":
+                    submitted = block.input
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": "Newsletter submitted. Thank you.",
+                    })
+                else:
+                    result = run_tool(block.name, block.input)
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": result,
+                    })
+
+        messages.append({"role": "user", "content": tool_results})
+        if submitted:
+            return submitted
+
+    raise RuntimeError("Agent did not submit a newsletter within step budget.")
+
+
+# --- Per-newsletter driver ------------------------------------------------
+
+def run_newsletter(cfg: NewsletterConfig) -> dict:
+    print(f"[{TODAY}] Starting: {cfg.name}")
+    payload = run_agent(cfg)
+    n = len(payload.get("programs", []))
+    print(f"[{TODAY}] {cfg.name}: agent returned {n} programs.")
+
+    sheet_path = OUTPUT_DIR / f"{cfg.filename_prefix}-{TODAY}.xlsx"
+    build_spreadsheet(payload["programs"], sheet_path, cfg)
+    print(f"[{TODAY}] {cfg.name}: spreadsheet saved -> {sheet_path}")
+
+    body = build_email_body(payload, cfg)
+    draft_id = create_gmail_draft(cfg.subject, body, sheet_path)
+    print(f"[{TODAY}] {cfg.name}: Gmail draft created -> {draft_id}")
+    return {"newsletter": cfg.name, "draft_id": draft_id, "count": n}
+
+
+# --- Main -----------------------------------------------------------------
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--newsletter",
+        choices=list(ALL_NEWSLETTERS.keys()) + ["all"],
+        default="all",
+        help="Which newsletter to draft. 'all' drafts both.",
+    )
+    args = parser.parse_args()
+
+    targets = (list(ALL_NEWSLETTERS.values())
+               if args.newsletter == "all"
+               else [ALL_NEWSLETTERS[args.newsletter]])
+
+    results = []
+    for cfg in targets:
+        try:
+            results.append(run_newsletter(cfg))
+        except Exception as exc:
+            print(f"[{TODAY}] {cfg.name}: FAILED — {exc}")
+            results.append({"newsletter": cfg.name, "error": str(exc)})
+
+    send_notification_email(results)
+    print(f"[{TODAY}] Notification email sent to {SAM_EMAIL}.")
+
+
+if __name__ == "__main__":
+    main()
