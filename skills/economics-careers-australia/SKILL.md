@@ -1,11 +1,11 @@
 ---
 name: economics-careers-australia
-description: Drafts Sam Fox's "Economics Careers Australia" newsletter — a roundup of currently-open internships, graduate jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships for economics students and graduates in Australia, covering the private sector (banks, asset managers, economics consultancies, strategy firms), public sector (federal and state Treasury, RBA, ABS, Productivity Commission, regulators), think tanks, universities, research institutes, nonprofits, and international organisations based in Australia. Each newsletter includes a filterable spreadsheet attachment. Trigger whenever Sam asks to draft, build, update, or refresh an "Economics Careers" newsletter, asks for current economics internships, graduate jobs, cadetships, or vacation programs in Australia, asks "what econ grad programs are open right now", or asks to add specific economics employers to a draft. Politically neutral; covers the full sector spectrum without ideological framing. Use this skill any time Sam mentions the phrase "Economics Careers" or references the regular economics-students-focused roundup.
+description: Drafts Sam Fox's "Young Economist Network Opportunity Roundup" newsletter — a roundup of currently-open internships, graduate jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships for economics students and graduates in Australia, covering the private sector (banks, asset managers, economics consultancies, strategy firms), public sector (federal and state Treasury, RBA, ABS, Productivity Commission, regulators), think tanks, universities, research institutes, nonprofits, and international organisations based in Australia. Each newsletter includes a filterable spreadsheet attachment. Trigger whenever Sam asks to draft, build, update, or refresh the "Young Economist Network Opportunity Roundup" or "Economics Careers" newsletter, asks for current economics internships, graduate jobs, cadetships, or vacation programs in Australia, asks "what econ grad programs are open right now", or asks to add specific economics employers to a draft. Politically neutral; covers the full sector spectrum without ideological framing.
 ---
 
-# Economics Careers Australia Newsletter
+# Young Economist Network Opportunity Roundup
 
-A skill for drafting Sam Fox's recurring "Economics Careers Australia" newsletter. The newsletter goes to students studying or interested in economics and lists currently-open Australian internships, graduate jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships across the full sector spectrum — politically neutral, not aligned to any ideological position.
+A skill for drafting Sam Fox's recurring "Young Economist Network Opportunity Roundup" newsletter. The newsletter goes to students studying or interested in economics and lists currently-open Australian internships, graduate jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships across the full sector spectrum — politically neutral, not aligned to any ideological position.
 
 ## Critical principles (do not skip)
 
@@ -23,7 +23,7 @@ A skill for drafting Sam Fox's recurring "Economics Careers Australia" newslette
 
 ### Step 1: Find what's been covered before
 
-Use the Gmail search tool with: `subject:"Economics Careers"` to find prior threads. Pull recent context with `messageFormat: FULL_CONTENT` to see what was featured. Programs from any previous newsletter can and should be re-featured for however many newsletters are needed if deadlines are still ahead, applications are still open, or the opportunity remains useful to readers. Do not suppress a program merely because it appeared in an earlier newsletter.
+Use the Gmail search tool with: `subject:"Young Economist Network Opportunity Roundup" OR subject:"Economics Careers"` to find prior threads, including older editions sent under the previous name. Pull recent context with `messageFormat: FULL_CONTENT` to see what was featured. Programs from any previous newsletter can and should be re-featured for however many newsletters are needed if deadlines are still ahead, applications are still open, or the opportunity remains useful to readers. Do not suppress a program merely because it appeared in an earlier newsletter.
 
 ### Step 2: Build the candidate list
 
@@ -72,7 +72,7 @@ Cross-check each program. Read `references/known-traps.md` before finalising —
 
 ### Step 4: Draft the newsletter email
 
-Read `references/template.md`. Subject is `Economics Careers Australia!`. Sections in this order:
+Read `references/template.md`. Subject is `Young Economist Network Opportunity Roundup`. Sections in this order:
 
 1. 🏛️ Federal Government & Regulators
 2. 🏛️ State Government

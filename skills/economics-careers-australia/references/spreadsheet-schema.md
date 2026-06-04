@@ -1,6 +1,6 @@
-# Spreadsheet Schema — Economics Careers Australia
+# Spreadsheet Schema - Young Economist Network Opportunity Roundup
 
-Every "Economics Careers Australia" newsletter is accompanied by an Excel spreadsheet (`.xlsx`) listing every currently-open program. Subscribers can filter by sector, type, deadline, location, etc.
+Every "Young Economist Network Opportunity Roundup" newsletter is accompanied by an Excel spreadsheet (`.xlsx`) listing every currently-open program. Subscribers can filter by sector, type, deadline, location, etc.
 
 ## File naming
 

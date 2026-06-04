@@ -1,12 +1,12 @@
-# Email Template — Economics Careers Australia
+# Email Template — Young Economist Network Opportunity Roundup
 
 ## Subject line
 
 ```
-Economics Careers Australia!
+Young Economist Network Opportunity Roundup
 ```
 
-(For dated editions, can also use: `Economics Careers Australia — [Month Year]`)
+(For dated editions, can also use: `Young Economist Network Opportunity Roundup — [Month Year]`)
 
 ## Opening block
 
@@ -15,7 +15,7 @@ For regular editions:
 ```
 Hi!
 
-The Young Economist Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
+The Young Economist Network Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
 
 This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
 
@@ -29,7 +29,7 @@ For editions going to a freshly expanded list (when many new readers have been a
 ```
 Hi!
 
-The Young Economist Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
+The Young Economist Network Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
 
 This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
 

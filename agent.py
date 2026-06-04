@@ -1,7 +1,7 @@
 """
-Economics Careers Australia newsletter agent.
+Young Economist Network Opportunity Roundup newsletter agent.
 
-Drafts the Economics Careers Australia newsletter using a Claude agent loop.
+Drafts the Young Economist Network Opportunity Roundup using a Claude agent loop.
 Saves the draft to Gmail with the spreadsheet attached
 and emails Sam a notification — never sends.
 
@@ -369,7 +369,7 @@ Today's date is {today}.
 
 YOUR JOB:
 
-1. Call gmail_search with query `subject:"{subject_root}"` to find what's been featured recently.
+1. Call gmail_search with query `subject:"{subject_root}" OR subject:"Economics Careers"` to find what's been featured recently, including editions sent under the old newsletter name.
 2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
 3. Call read_reference_file for `organisations.md`, then run an extensive check across the remaining organisation list. Cover every major sector and prioritise named organisations with direct careers, student, graduate, internship, cadetship, or vacationer pages.
 4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates, but do not stop after only a small sample.

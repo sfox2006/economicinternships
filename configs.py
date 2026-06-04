@@ -1,5 +1,5 @@
 """
-Newsletter configuration for the Economics Careers Australia bot.
+Newsletter configuration for the Young Economist Network Opportunity Roundup bot.
 """
 from __future__ import annotations
 
@@ -22,9 +22,9 @@ class NewsletterConfig:
 
 ECONOMICS_CAREERS = NewsletterConfig(
     name="economics-careers",
-    subject="Economics Careers Australia!",
+    subject="Young Economist Network Opportunity Roundup",
     skill_dir="skills/economics-careers-australia",
-    filename_prefix="economics-careers-australia",
+    filename_prefix="young-economist-network-opportunity-roundup",
     section_field="sector",
     section_order=[
         "Federal Government",

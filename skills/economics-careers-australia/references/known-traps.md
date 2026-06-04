@@ -1,4 +1,4 @@
-# Known Verification Traps — Economics Careers Australia
+# Known Verification Traps - Young Economist Network Opportunity Roundup
 
 Employer-specific gotchas. **Read this file before finalising any draft.**
 

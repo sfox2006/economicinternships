@@ -1,4 +1,4 @@
-# Target Organisations — Economics Careers Australia
+# Target Organisations - Young Economist Network Opportunity Roundup
 
 Comprehensive list of Australian employers running economics internships and graduate programs, grouped by sector. Includes public sector (federal and state), private sector (banks, asset managers, consultancies), think tanks, nonprofits, and international organisations based in Australia.
 
