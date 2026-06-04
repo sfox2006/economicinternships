@@ -38,9 +38,9 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
-CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "30"))
-MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "35"))
-MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "70"))
+CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "60"))
+MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "90"))
+MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "260"))
 ROOT = Path(__file__).parent
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -283,9 +283,9 @@ YOUR JOB:
 
 1. Call gmail_search with query `subject:"{subject_root}"` to find what's been featured recently.
 2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
-3. Call read_reference_file for `organisations.md`, then run a bounded high-yield check of likely currently-open programs. Do not try to exhaustively crawl every organisation in one run.
-4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, analyst jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates.
-5. Stop once you have a useful verified set across the main sections. It is better to submit 15-35 accurate open listings than to keep researching indefinitely.
+3. Call read_reference_file for `organisations.md`, then run an extensive check across the organisation list. Cover every major sector and prioritise named organisations with direct careers, student, graduate, internship, cadetship, analyst, or vacationer pages.
+4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, analyst jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates, but do not stop after only a small sample.
+5. Submit only after you have made a broad pass through the likely sources, exhausted the useful official pages, or reached the available web-fetch/agent-step budget. It is okay for the run to be long if the output is more comprehensive.
 6. When you have a verified list of currently-open programs, call submit_newsletter with the final structured payload.
 
 CRITICAL RULES:
@@ -294,7 +294,7 @@ CRITICAL RULES:
 - Never invent a deadline. Use the hedging language from template.md.
 - Do not use the word "genuinely".
 - Match the section order, type order, header format, and tone from template.md.
-- Use web_fetch efficiently. Request multiple tool calls in one assistant turn where possible, and do not exceed the available web-fetch budget.
+- Use web_fetch efficiently. Request multiple tool calls in one assistant turn where possible, and use the available web-fetch budget for breadth before finalising.
 
 Once you call submit_newsletter you are done.
 """
