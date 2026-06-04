@@ -20,6 +20,8 @@ Want to keep getting these? Sign up yourself or refer a friend to help us grow: 
 Here's this edition's roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. I've grouped them by sector — Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations.
 
 📎 A filterable spreadsheet of every currently-open program or role is attached — sort by sector, type, deadline, and location.
+
+I've also included a short "Coming up soon" watchlist where useful. Those items are not open yet, but are worth checking over the next 1-2 months.
 ```
 
 For editions going to a freshly expanded list (when many new readers have been added — Sam will flag this):
@@ -81,6 +83,22 @@ Within each sector section, order by:
 1. **Type** — Graduate Programs and Graduate Jobs first, then Cadetships, then Internships/Vacationer programs, then Industry Placements, Scholarships, and Other
 2. **Deadline** — sooner first, rolling/undated last
 3. **Tier** — major employers first (Treasury before a small state department; CBA before Bendigo Bank)
+
+## Coming up soon
+
+Use this section only for opportunities likely to open in the next 1-2 months. These are not currently open, so keep them out of the spreadsheet and main sections.
+
+Format:
+
+```
+🗓️ COMING UP SOON
+
+Organisation — Program Name | Expected: June-July 2026
+
+Brief note explaining what the program is, why it is relevant, and why students should check back soon. Be clear that applications are expected/upcoming rather than currently open.
+
+https://example.com/careers
+```
 
 ## Closing
 

@@ -15,8 +15,9 @@ A skill for drafting Sam Fox's recurring "Economics Careers Australia" newslette
 4. **Be specific about discipline.** Economics is broad — some roles want quantitative modelling, some want policy writing, some want financial markets analysis. Where the live page specifies, capture that in the description.
 5. **When uncertain, be honest.** Use "Apply early", "Rolling", "Annual cycle — check live page", or "Applications open" rather than guessing. Never invent a deadline.
 6. **Drop anything you cannot verify as open** by the planned send date.
-7. **Closed programs are not included** — neither in the email body nor in the spreadsheet.
-8. **Politically neutral framing.** This is not the More Opportunities! newsletter. Don't import its ideological framing. Describe each employer factually — Treasury is "Australia's central economic policy department", Grattan is "Australia's leading domestic policy think tank", not "centrist" or "non-partisan" labels that could read as editorialising.
+7. **Upcoming programs are separate.** If an opportunity is likely to open in the next 1-2 months, include it only in the `COMING UP SOON` watchlist, not in the currently-open sections or spreadsheet.
+8. **Closed programs are not included** — neither in the currently-open email body nor in the spreadsheet.
+9. **Politically neutral framing.** This is not the More Opportunities! newsletter. Don't import its ideological framing. Describe each employer factually — Treasury is "Australia's central economic policy department", Grattan is "Australia's leading domestic policy think tank", not "centrist" or "non-partisan" labels that could read as editorialising.
 
 ## Workflow
 
@@ -28,7 +29,7 @@ Use the Gmail search tool with: `subject:"Economics Careers"` to find prior thre
 
 Read `references/organisations.md` for the full list of target organisations grouped by sector. The list covers:
 
-- **Public sector — federal**: Treasury, RBA, Productivity Commission, ABS, ACCC, APRA, ASIC, regulators
+- **Public sector — federal**: core economics agencies and regulators such as Treasury, RBA, Productivity Commission, ABS, ACCC, APRA, ASIC, ATO, Finance, DFAT, and related economic policy departments. This is not every Australian Government agency.
 - **Public sector — state**: NSW, VIC, QLD, WA, SA, TAS, ACT, NT Treasuries
 - **Private sector — banks**: CBA, ANZ, NAB, Westpac, Macquarie, plus investment banks
 - **Private sector — asset managers**: Future Fund, BlackRock, Magellan, etc.
@@ -40,6 +41,16 @@ Read `references/organisations.md` for the full list of target organisations gro
 - **International orgs in Australia**: OECD, World Bank, ADB
 
 Search live employer pages for all economics-relevant early-career entry points, including keywords such as `internship`, `intern`, `graduate program`, `graduate job`, `graduate economist`, `cadetship`, `cadet`, `vacation program`, `vacationer`, `summer vacation`, `industry placement`, and `scholarship`.
+
+For opportunities that are not yet open but are likely to open in the next 1-2 months, capture them in `upcoming_programs` with:
+- Organisation
+- Program name
+- Sector
+- Expected window (e.g. "Expected June-July 2026", "Applications usually open in July")
+- A short note explaining why students should watch it
+- URL
+
+Do not put upcoming programs in the spreadsheet.
 
 For each candidate program or role, capture:
 - Organisation
@@ -73,6 +84,8 @@ Read `references/template.md`. Subject is `Economics Careers Australia!`. Sectio
 8. 🎓 Universities & Research Institutes
 9. 🌱 Nonprofits
 10. 🌐 International Organisations
+
+After the currently-open sections, include `🗓️ COMING UP SOON` if there are useful upcoming programs expected in the next 1-2 months. Keep it short and clearly labelled as a watchlist.
 
 Skip any section with no currently-open programs.
 
