@@ -297,7 +297,10 @@ def body_to_html(body: str) -> str:
             parts.append('<div style="height: 10px;"></div>')
             continue
         if line == "---":
-            parts.append('<hr style="border: 0; border-top: 1px solid #dadce0; margin: 22px 0;">')
+            parts.append(
+                '<div style="height: 18px;"></div>'
+                '<hr style="border: 0; border-top: 1px solid #dadce0; margin: 0 0 22px;">'
+            )
             continue
         if is_section_header(line):
             parts.append(
