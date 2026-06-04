@@ -10,10 +10,10 @@ Every "Economics Careers Australia" newsletter is accompanied by an Excel spread
 
 | # | Column name | Type | Allowed values / notes |
 |---|---|---|---|
-| 1 | Sector | Fixed list | Federal Government / State Government / Banks & Investment Banks / Asset Managers & Super Funds / Corporate Graduate & Analyst Roles / Economics Consultancies / Strategy & Big 4 Consulting / Think Tanks & Policy Institutes / Business Lobby Groups & Unions / Universities & Research Institutes / Nonprofits & NGOs / International Organisations / Other |
+| 1 | Sector | Fixed list | Federal Government / State Government / Banks & Investment Banks / Asset Managers & Super Funds / Economics Consultancies / Strategy & Big 4 Consulting / Think Tanks & Policy Institutes / Universities & Research Institutes / Nonprofits & NGOs / International Organisations / Other |
 | 2 | Organisation | Text | Full name (e.g. "Reserve Bank of Australia") |
 | 3 | Program name | Text | Specific program (e.g. "2027 Graduate Program — Economist Stream") |
-| 4 | Type | Fixed list | Graduate Program / Graduate Job / Analyst Job / Cadetship / Vacationer Program / Summer Vacation / Internship / Industry Placement / Scholarship / Other |
+| 4 | Type | Fixed list | Graduate Program / Graduate Job / Cadetship / Vacationer Program / Summer Vacation / Internship / Industry Placement / Scholarship / Other |
 | 5 | Deadline | Text | Specific date `DD Mon YYYY`, or one of: "Rolling", "Apply early", "Annual cycle — check live page", "Applications open". Never invent a deadline. |
 | 6 | Location | Text | "Sydney", "Melbourne", "Canberra", "Multiple locations", etc. |
 | 7 | Duration | Text | e.g. "12 months", "10-12 weeks", "Semester-long", "2 years rotational" |
@@ -27,7 +27,7 @@ Every "Economics Careers Australia" newsletter is accompanied by an Excel spread
 
 - **Only currently-open programs** are listed.
 - **One row per program** — Treasury Graduate Program and Treasury Summer Vacation are separate rows.
-- **Sort order**: Sector (in the order listed above), then Type (Graduate Programs and Graduate Jobs first, then Analyst Jobs, Cadetships, Internships/Vacationer programs, Industry Placements, Scholarships, and Other), then deadline (sooner first).
+- **Sort order**: Sector (in the order listed above), then Type (Graduate Programs and Graduate Jobs first, then Cadetships, Internships/Vacationer programs, Industry Placements, Scholarships, and Other), then deadline (sooner first).
 - **Header row**: Bold, freeze top row, enable Excel auto-filter so users can sort/filter.
 
 ## Implementation
@@ -38,7 +38,7 @@ Use the xlsx skill at `/mnt/skills/public/xlsx/SKILL.md` to generate the file.
 
 ```
 Sector              | Organisation               | Program name                          | Type              | Deadline       | Location | Duration | Paid?              | Citizen? | Year of study           | Notes                              | Apply URL
-Federal Government  | Reserve Bank of Australia  | 2027 Graduate Program - Economist     | Graduate Program  | 14 Mar 2026    | Sydney   | 12 months | Yes — ~$95,000     | Yes      | Final year + Honours    | Two streams: Economist, Analyst    | https://www.rba.gov.au/careers/graduate.html
+Federal Government  | Reserve Bank of Australia  | 2027 Graduate Program - Economist     | Graduate Program  | 14 Mar 2026    | Sydney   | 12 months | Yes — ~$95,000     | Yes      | Final year + Honours    | Economist stream    | https://www.rba.gov.au/careers/graduate.html
 Big 4 Bank          | Commonwealth Bank          | 2026 Summer Internship                | Summer Vacation   | Rolling        | Multiple | 10-12 wks | Yes — competitive  | No       | Penultimate year        | Several streams; finance focus     | https://www.commbank.com.au/careers/students.html
 Economics Consulting| Frontier Economics         | 2027 Graduate Program                 | Graduate Program  | 31 Aug 2026    | Sydney   | Full-time | Yes — competitive  | No       | Final year + Honours    | Quant skills valued                | https://www.frontier-economics.com.au/careers
 ```

@@ -8,7 +8,7 @@ On the 1st of every month, or whenever Sam triggers it manually, a GitHub Action
 
 1. Reads the skill files in `skills/economics-careers-australia/`.
 2. Searches Sam's Gmail for the most recent prior Economics Careers newsletter.
-3. Checks listed employer application pages for currently-open internships, graduate jobs, analyst jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships.
+3. Checks listed employer application pages for currently-open internships, graduate jobs, cadetships, vacationer/vacation programs, industry placements, and scholarships.
 4. Builds the email body and a filterable `.xlsx` spreadsheet.
 5. Saves the email as a Gmail draft with the spreadsheet attached.
 6. Sends Sam a notification email with the draft link.

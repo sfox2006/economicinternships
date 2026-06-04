@@ -31,10 +31,10 @@ jobs:
           CLAUDE_MODEL: claude-3-5-haiku-20241022
           PYTHONUTF8: "1"
           CLAUDE_CALL_DELAY_SECONDS: "20"
-          MAX_AGENT_STEPS: "35"
-          MAX_WEB_FETCHES: "100"
+          MAX_AGENT_STEPS: "28"
+          MAX_WEB_FETCHES: "75"
           MAX_OUTPUT_TOKENS: "4000"
-          MAX_COST_USD: "5.00"
+          MAX_COST_USD: "4.50"
           INPUT_COST_PER_MTOK: "0.80"
           OUTPUT_COST_PER_MTOK: "4.00"
         run: python agent.py --newsletter economics-careers

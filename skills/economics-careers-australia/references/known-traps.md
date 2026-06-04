@@ -6,9 +6,9 @@ Employer-specific gotchas. **Read this file before finalising any draft.**
 
 ## Role-type traps
 
-- **The trap**: Employers use inconsistent labels. "Vacationer", "Vacation Program", "Summer Internship", "Summer Analyst", and "Internship" can refer to the same broad penultimate-year pathway. "Analyst" can mean a graduate-entry analyst role or an experienced-hire role.
-- **Verification rule**: Use the employer's exact program title in `Program name`, then choose the closest spreadsheet `Type`. If an analyst job is open to graduates or early-career applicants, use `Analyst Job`; if it requires substantial experience, omit it.
-- **Do not miss these keywords**: internship, intern, graduate program, graduate job, graduate economist, analyst, research analyst, policy analyst, cadetship, cadet, vacation program, vacationer, summer vacation, summer analyst, industry placement, scholarship.
+- **The trap**: Employers use inconsistent labels. "Vacationer", "Vacation Program", "Summer Internship", and "Internship" can refer to the same broad penultimate-year pathway.
+- **Verification rule**: Use the employer's exact program title in `Program name`, then choose the closest spreadsheet `Type`.
+- **Do not miss these keywords**: internship, intern, graduate program, graduate job, graduate economist, cadetship, cadet, vacation program, vacationer, summer vacation, industry placement, scholarship.
 
 ---
 
@@ -19,7 +19,7 @@ Employer-specific gotchas. **Read this file before finalising any draft.**
 
 ## Reserve Bank of Australia (RBA)
 
-- **The trap**: Three distinct programs — Graduate Program (Economist and Analyst streams, final-year + honours), Cadetship Program (penultimate-year, part-time during study), and Summer Internship. Easy to conflate.
+- **The trap**: Three distinct programs — Graduate Program (Economist stream, final-year + honours), Cadetship Program (penultimate-year, part-time during study), and Summer Internship. Easy to conflate.
 - **Verification rule**: Three rows in the spreadsheet, not one. The Economist stream requires Honours or equivalent — flag this.
 
 ## Productivity Commission

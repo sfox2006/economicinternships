@@ -39,10 +39,10 @@ from configs import ALL_NEWSLETTERS, NewsletterConfig
 SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-3-5-haiku-20241022")
 CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "20"))
-MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "35"))
-MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "100"))
+MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "28"))
+MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "75"))
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "4000"))
-MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "5.00"))
+MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "4.50"))
 INPUT_COST_PER_MTOK = float(os.environ.get("INPUT_COST_PER_MTOK", "0.80"))
 OUTPUT_COST_PER_MTOK = float(os.environ.get("OUTPUT_COST_PER_MTOK", "4.00"))
 ROOT = Path(__file__).parent
@@ -287,8 +287,8 @@ YOUR JOB:
 
 1. Call gmail_search with query `subject:"{subject_root}"` to find what's been featured recently.
 2. Optionally call gmail_get_thread on the most recent thread to read what was in the last newsletter.
-3. Call read_reference_file for `organisations.md`, then run an extensive check across the organisation list. Cover every major sector and prioritise named organisations with direct careers, student, graduate, internship, cadetship, analyst, or vacationer pages.
-4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, analyst jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates, but do not stop after only a small sample.
+3. Call read_reference_file for `organisations.md`, then run an extensive check across the remaining organisation list. Cover every major sector and prioritise named organisations with direct careers, student, graduate, internship, cadetship, or vacationer pages.
+4. Prioritise official early-career pages with direct evidence of open internships, graduate jobs, cadetships, vacationer programs, industry placements, or scholarships. Use the prior Gmail newsletter, seasonal timing, and prominent employers to choose candidates, but do not stop after only a small sample.
 5. Submit only after you have made a broad pass through the likely sources, exhausted the useful official pages, or reached the available web-fetch/agent-step budget. Stay within the configured cost budget even if that means a shorter but still useful issue.
 6. When you have a verified list of currently-open programs, call submit_newsletter with the final structured payload.
 
@@ -314,7 +314,6 @@ def build_submit_tool_schema(cfg: NewsletterConfig) -> dict:
             "enum": [
                 "Graduate Program",
                 "Graduate Job",
-                "Analyst Job",
                 "Cadetship",
                 "Vacationer Program",
                 "Summer Vacation",
