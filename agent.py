@@ -18,6 +18,7 @@ import re
 import time
 import urllib.request
 from datetime import date
+from html import escape
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -103,12 +104,25 @@ def extract_body(payload) -> str:
     return "\n".join(out)
 
 
-def create_gmail_draft(subject: str, body: str, attachment_path: Path | None = None) -> str:
-    msg = MIMEMultipart()
+def create_gmail_draft(
+    subject: str,
+    body: str,
+    attachment_path: Path | None = None,
+    html_body: str | None = None,
+) -> str:
+    msg = MIMEMultipart("mixed")
     msg["to"] = SAM_EMAIL
     msg["from"] = SAM_EMAIL
     msg["subject"] = subject
-    msg.attach(MIMEText(body, "plain", "utf-8"))
+
+    if html_body:
+        alternative = MIMEMultipart("alternative")
+        alternative.attach(MIMEText(body, "plain", "utf-8"))
+        alternative.attach(MIMEText(html_body, "html", "utf-8"))
+        msg.attach(alternative)
+    else:
+        msg.attach(MIMEText(body, "plain", "utf-8"))
+
     if attachment_path and attachment_path.exists():
         part = MIMEBase("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         part.set_payload(attachment_path.read_bytes())
@@ -240,7 +254,7 @@ def format_section(name: str, items: list[dict], cfg: NewsletterConfig) -> str:
     emoji = cfg.section_emojis.get(name, "🌐")
     header = f"{emoji} {name.upper()}"
     blocks = [header, ""]
-    for p in items:
+    for p in sorted(items, key=program_sort_key):
         blocks.append(f"{p['organisation']} — {p['program_name']} | {p['deadline']}")
         blocks.append("")
         blocks.append(p["description_paragraph"].strip())
@@ -248,6 +262,17 @@ def format_section(name: str, items: list[dict], cfg: NewsletterConfig) -> str:
         blocks.append(p["url"])
         blocks.append("")
     return "\n".join(blocks).rstrip()
+
+
+def program_sort_key(program: dict) -> tuple[int, str, str]:
+    """Keep graduate programs/jobs at the bottom of each section."""
+    type_name = program.get("type", "")
+    graduate_rank = 1 if type_name in {"Graduate Program", "Graduate Job"} else 0
+    return (
+        graduate_rank,
+        program.get("deadline", "zzzz"),
+        program.get("organisation", ""),
+    )
 
 
 def format_upcoming_section(items: list[dict]) -> str:
@@ -260,6 +285,46 @@ def format_upcoming_section(items: list[dict]) -> str:
         blocks.append(p["url"])
         blocks.append("")
     return "\n".join(blocks).rstrip()
+
+
+def body_to_html(body: str) -> str:
+    parts = [
+        '<div style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; color: #202124;">'
+    ]
+    for raw_line in body.splitlines():
+        line = raw_line.strip()
+        if not line:
+            parts.append('<div style="height: 10px;"></div>')
+            continue
+        if line == "---":
+            parts.append('<hr style="border: 0; border-top: 1px solid #dadce0; margin: 22px 0;">')
+            continue
+        if is_section_header(line):
+            parts.append(
+                f'<h2 style="font-size: 21px; line-height: 1.3; font-weight: 700; '
+                f'margin: 24px 0 10px; color: #111827;">{escape(line)}</h2>'
+            )
+            continue
+        if " — " in line and " | " in line:
+            parts.append(
+                f'<p style="font-size: 15px; font-weight: 700; margin: 14px 0 4px;">'
+                f'{escape(line)}</p>'
+            )
+            continue
+        if line.startswith("http://") or line.startswith("https://"):
+            safe_url = escape(line, quote=True)
+            parts.append(f'<p style="margin: 4px 0 12px;"><a href="{safe_url}">{escape(line)}</a></p>')
+            continue
+        parts.append(f'<p style="margin: 0 0 8px;">{escape(line)}</p>')
+    parts.append("</div>")
+    return "\n".join(parts)
+
+
+def is_section_header(line: str) -> bool:
+    if line == "🗓️ COMING UP SOON":
+        return True
+    text = re.sub(r"^[^\w]+", "", line).strip()
+    return bool(text) and text == text.upper() and any(ch.isalpha() for ch in text)
 
 
 # --- Agent loop -----------------------------------------------------------
@@ -640,7 +705,7 @@ def run_newsletter(cfg: NewsletterConfig) -> dict:
     print(f"[{TODAY}] {cfg.name}: spreadsheet saved -> {sheet_path}")
 
     body = build_email_body(payload, cfg)
-    draft_id = create_gmail_draft(cfg.subject, body, sheet_path)
+    draft_id = create_gmail_draft(cfg.subject, body, sheet_path, body_to_html(body))
     print(f"[{TODAY}] {cfg.name}: Gmail draft created -> {draft_id}")
     return {"newsletter": cfg.name, "draft_id": draft_id, "count": n}
 

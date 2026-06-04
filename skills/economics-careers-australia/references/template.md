@@ -80,7 +80,7 @@ https://www.rba.gov.au/careers/graduate.html
 ## Ordering within sections
 
 Within each sector section, order by:
-1. **Type** — Graduate Programs and Graduate Jobs first, then Cadetships, then Internships/Vacationer programs, then Industry Placements, Scholarships, and Other
+1. **Type** — Cadetships, Internships/Vacationer programs, Industry Placements, Scholarships, and Other first; Graduate Programs and Graduate Jobs last
 2. **Deadline** — sooner first, rolling/undated last
 3. **Tier** — major employers first (Treasury before a small state department; CBA before Bendigo Bank)
 
@@ -113,7 +113,7 @@ Sam
 
 ## Formatting notes
 
-- **No markdown asterisks or bold** in the body — Gmail's plain-text composer renders them as literal asterisks.
+- The bot creates an HTML Gmail draft. Section headings are styled larger and bold automatically. Do not add markdown asterisks or manual HTML in the generated text.
 - **No emojis beyond the sector header emojis.**
 - **Don't use the word "genuinely".**
 - **No political framing.** This newsletter is sector-comprehensive and politically neutral. Avoid labels like "centre-right" or "left-leaning" in program descriptions — describe each employer factually by what they do.

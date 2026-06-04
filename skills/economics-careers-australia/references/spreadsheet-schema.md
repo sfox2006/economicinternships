@@ -28,7 +28,7 @@ Every "Economics Careers Australia" newsletter is accompanied by an Excel spread
 - **Only currently-open programs** are listed.
 - **Upcoming programs are not listed** in the spreadsheet. They may appear in the email's `COMING UP SOON` watchlist only.
 - **One row per program** — Treasury Graduate Program and Treasury Summer Vacation are separate rows.
-- **Sort order**: Sector (in the order listed above), then Type (Graduate Programs and Graduate Jobs first, then Cadetships, Internships/Vacationer programs, Industry Placements, Scholarships, and Other), then deadline (sooner first).
+- **Sort order**: Sector (in the order listed above), then Type (Cadetships, Internships/Vacationer programs, Industry Placements, Scholarships, and Other first; Graduate Programs and Graduate Jobs last), then deadline (sooner first).
 - **Header row**: Bold, freeze top row, enable Excel auto-filter so users can sort/filter.
 
 ## Implementation
