@@ -15,15 +15,13 @@ For regular editions:
 ```
 Hi!
 
-Want to keep getting these? Sign up yourself or refer a friend to help us grow: [signup form link — Sam to supply once Google Form created]
+The Young Economist Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
 
-This newsletter is only available because of the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
+This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
 
-Here's this edition's roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. I've grouped them by sector — Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations.
+Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 1-2 months.
 
-📎 A filterable spreadsheet of every currently-open program or role is attached — sort by sector, type, deadline, and location.
-
-I've also included a short "Coming up soon" watchlist where useful. Those items are not open yet, but are worth checking over the next 1-2 months.
+Want to keep getting these? Sign up yourself, or refer a friend who might find this useful: https://forms.gle/MfAabUPCQpQ2m4QE7
 ```
 
 For editions going to a freshly expanded list (when many new readers have been added — Sam will flag this):
@@ -31,17 +29,15 @@ For editions going to a freshly expanded list (when many new readers have been a
 ```
 Hi!
 
-For those of you new to this list — welcome! "Economics Careers Australia" is a roundup I send out periodically of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates across Australia. It covers the full sector spectrum: federal and state Treasury, the RBA, regulators, the major banks, asset managers, economics consultancies, strategy and Big 4 firms, think tanks, universities, research institutes, nonprofits, and international organisations. The goal is simple: surface what's actually open right now, so you don't have to chase 30 different careers portals.
+The Young Economist Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
 
-This newsletter is only available because of the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
+This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA here: https://esawa.org.au/networks-item/16216/young-economists-network
 
 If you'd rather not be on this list, just hit reply and let me know — no hard feelings, I'll take you off right away.
 
-Want to keep getting these? Sign up yourself or refer a friend to help us grow: [signup form link]
+Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 1-2 months.
 
-Here's this edition's roundup, grouped by sector.
-
-📎 A filterable spreadsheet of every currently-open program is attached.
+Want to keep getting these? Sign up yourself, or refer a friend who might find this useful: https://forms.gle/MfAabUPCQpQ2m4QE7
 ```
 
 ## Section headers

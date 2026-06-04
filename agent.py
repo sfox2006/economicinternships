@@ -312,6 +312,7 @@ YOUR JOB:
 CRITICAL RULES:
 - Closed programs are EXCLUDED — not in the email body, not in the spreadsheet.
 - When uncertain whether a program is open, OMIT IT. Better a shorter accurate newsletter than a long one with broken listings.
+- Do not remove or suppress a currently-open program just because it appeared in the previous newsletter. Repeat it when the deadline is still ahead, applications are still open, or it remains useful to readers.
 - Upcoming programs are allowed only in `upcoming_programs`, not `programs`. Include them when the live page or a reliable prior-cycle pattern suggests applications are likely to open within 1-2 months.
 - Never invent a deadline. Use the hedging language from template.md.
 - Do not use the word "genuinely".

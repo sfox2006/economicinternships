@@ -23,7 +23,7 @@ A skill for drafting Sam Fox's recurring "Economics Careers Australia" newslette
 
 ### Step 1: Find what's been covered before
 
-Use the Gmail search tool with: `subject:"Economics Careers"` to find prior threads. Pull the most recent with `messageFormat: FULL_CONTENT` to see what was featured. Programs from the last 1–2 newsletters can be re-featured if deadlines are still ahead and imminent.
+Use the Gmail search tool with: `subject:"Economics Careers"` to find prior threads. Pull the most recent with `messageFormat: FULL_CONTENT` to see what was featured. Programs from the last 1–2 newsletters can and should be re-featured if deadlines are still ahead, applications are still open, or the opportunity remains useful to readers. Do not suppress a program merely because it appeared in the last newsletter.
 
 ### Step 2: Build the candidate list
 
