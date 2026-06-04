@@ -304,13 +304,13 @@ def body_to_html(body: str) -> str:
             continue
         if is_section_header(line):
             parts.append(
-                f'<h2 style="font-size: 21px; line-height: 1.3; font-weight: 700; '
+                f'<h2 style="font-size: 24px; line-height: 1.3; font-weight: 700; '
                 f'margin: 24px 0 10px; color: #111827;">{escape(line)}</h2>'
             )
             continue
         if " — " in line and " | " in line:
             parts.append(
-                f'<p style="font-size: 15px; font-weight: 700; margin: 14px 0 4px;">'
+                f'<p style="font-size: 17px; font-weight: 700; margin: 14px 0 4px;">'
                 f'{escape(line)}</p>'
             )
             continue
