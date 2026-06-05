@@ -41,6 +41,7 @@ SAM_EMAIL = os.environ.get("SAM_EMAIL", "samfoxanu@gmail.com")
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
 CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "75"))
 MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "65"))
+FINALIZE_WITH_STEPS_REMAINING = int(os.environ.get("FINALIZE_WITH_STEPS_REMAINING", "8"))
 MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "250"))
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "8000"))
 MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "10.00"))
@@ -598,8 +599,10 @@ def run_agent(cfg: NewsletterConfig) -> dict:
     web_fetches = 0
     estimated_cost = 0.0
     budget_warning_sent = False
+    step_warning_sent = False
 
     for step in range(MAX_AGENT_STEPS):
+        steps_remaining = MAX_AGENT_STEPS - step
         if estimated_cost >= MAX_COST_USD and budget_warning_sent:
             raise RuntimeError(
                 f"Cost budget reached before a draft was submitted: "
@@ -617,6 +620,18 @@ def run_agent(cfg: NewsletterConfig) -> dict:
                 ),
             })
             budget_warning_sent = True
+
+        if steps_remaining <= FINALIZE_WITH_STEPS_REMAINING and not step_warning_sent:
+            messages.append({
+                "role": "user",
+                "content": (
+                    f"You have only {steps_remaining} agent steps left. Stop all further "
+                    "research now. Do not call web_fetch again. Submit the best complete "
+                    "newsletter now using the verified programs and upcoming items you "
+                    "already have, even if coverage is imperfect."
+                ),
+            })
+            step_warning_sent = True
 
         if step:
             print(f"[{TODAY}] Waiting {CLAUDE_CALL_DELAY_SECONDS}s to stay under API rate limits...")
@@ -673,7 +688,12 @@ def run_agent(cfg: NewsletterConfig) -> dict:
                         result = read_reference_file(cfg, block.input["filename"])
                     elif block.name == "web_fetch":
                         web_fetches += 1
-                        if web_fetches > MAX_WEB_FETCHES:
+                        if step_warning_sent:
+                            result = (
+                                "[FINAL STEP WARNING ACTIVE] Do not fetch more pages. "
+                                "Call submit_newsletter now using already-verified programs."
+                            )
+                        elif web_fetches > MAX_WEB_FETCHES:
                             result = (
                                 "[WEB FETCH BUDGET EXHAUSTED] Submit the best verified "
                                 "newsletter now using only already-verified open programs."
