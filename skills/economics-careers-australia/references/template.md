@@ -127,7 +127,8 @@ Sam
 
 ## Formatting notes
 
-- The bot creates an HTML Gmail draft. Section headings are styled larger and bold automatically. Do not add markdown asterisks or manual HTML in the generated text.
+- The bot creates an HTML Gmail draft. Section headings are styled at roughly 24px bold, program header lines are styled at roughly 17px bold, and sections are separated by horizontal lines with spacing. Do not add markdown asterisks or manual HTML in the generated text.
+- If composing manually in a rich-text email editor, use the same hierarchy: large bold section headings, slightly smaller bold opportunity lines, normal body text.
 - **No emojis beyond the sector header emojis.**
 - **Don't use the word "genuinely".**
 - **No political framing.** This newsletter is sector-comprehensive and politically neutral. Avoid labels like "centre-right" or "left-leaning" in program descriptions — describe each employer factually by what they do.
