@@ -17,14 +17,21 @@ Hi!
 
 The Young Economist Network Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
 
-This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA through your state branch:
-ACT: https://esaact.org.au/networks-item/16269/young-economists-network-act/?type_fr=1845
-NSW: https://esansw.org.au/networks-item/16274/young-economists-network/?type_fr=1845
-Queensland: https://esaqld.org.au/networks-item/16228/young-economists/?type_fr=1845
-South Australia: https://esasa.org.au/networks-item/16250/young-economists/?type_fr=1845
-Tasmania: https://esatas.org.au/networks-item/16282/young-economists/?type_fr=1845
-Victoria: https://esavic.org.au/networks-item/16285/young-professionals-network/?type_fr=1845
-Western Australia: https://esawa.org.au/networks-item/16216/young-economists-network/?type_fr=1845
+This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, networking opportunities, and conversations about real economic issues beyond the lecture hall. You can learn more about YEN and join ESA through your state branch:
+
+ACT: https://esaact.org.au/young-economists-item/16410/young-economists
+
+NSW: https://esansw.org.au/news/16274/young-economists
+
+Queensland: https://esaqld.org.au/young-economists-item/16812/young-economists
+
+South Australia: https://esasa.org.au/news/16322/welcome-and-about-esa-south-australia
+
+Tasmania: https://esatas.org.au/young-economists-can-be-deleted-item/16164/young-economists
+
+Victoria: https://esavic.org.au/content/1164/young-professionals-network
+
+Western Australia: https://esawa.org.au/content/411/networks
 
 Here's this edition's roundup, grouped by sector: Federal Government → State Government → Banks → Asset Managers → Economics Consultancies → Strategy & Big 4 Consulting → Think Tanks → Universities & Research Institutes → Nonprofits → International Organisations. A filterable spreadsheet of every currently-open program is attached, so you can sort by sector, type, deadline, location, citizenship requirements, and more. Where useful, I've also included a short "Coming up soon" watchlist for opportunities expected to open in the next 3 months.
 
@@ -38,14 +45,21 @@ Hi!
 
 The Young Economist Network Opportunity Roundup is a roundup of currently-open internships, graduate jobs, cadetships, vacationer programs, industry placements, and scholarships for economics students and graduates in Australia. The aim is simple: surface opportunities that are actually open, so you do not have to chase every careers portal yourself.
 
-This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, employment opportunities, and conversations about real economic issues beyond the classroom. You can learn more about YEN and join ESA through your state branch:
-ACT: https://esaact.org.au/networks-item/16269/young-economists-network-act/?type_fr=1845
-NSW: https://esansw.org.au/networks-item/16274/young-economists-network/?type_fr=1845
-Queensland: https://esaqld.org.au/networks-item/16228/young-economists/?type_fr=1845
-South Australia: https://esasa.org.au/networks-item/16250/young-economists/?type_fr=1845
-Tasmania: https://esatas.org.au/networks-item/16282/young-economists/?type_fr=1845
-Victoria: https://esavic.org.au/networks-item/16285/young-professionals-network/?type_fr=1845
-Western Australia: https://esawa.org.au/networks-item/16216/young-economists-network/?type_fr=1845
+This newsletter is available thanks to the support of the Young Economist Network, part of the Economic Society of Australia. YEN helps students and early-career economists connect with the profession through events, discounted ESA membership, newsletters, networking opportunities, and conversations about real economic issues beyond the lecture hall. You can learn more about YEN and join ESA through your state branch:
+
+ACT: https://esaact.org.au/young-economists-item/16410/young-economists
+
+NSW: https://esansw.org.au/news/16274/young-economists
+
+Queensland: https://esaqld.org.au/young-economists-item/16812/young-economists
+
+South Australia: https://esasa.org.au/news/16322/welcome-and-about-esa-south-australia
+
+Tasmania: https://esatas.org.au/young-economists-can-be-deleted-item/16164/young-economists
+
+Victoria: https://esavic.org.au/content/1164/young-professionals-network
+
+Western Australia: https://esawa.org.au/content/411/networks
 
 If you'd rather not be on this list, just hit reply and let me know — no hard feelings, I'll take you off right away.
 
