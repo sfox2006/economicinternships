@@ -43,8 +43,11 @@ CLAUDE_CALL_DELAY_SECONDS = int(os.environ.get("CLAUDE_CALL_DELAY_SECONDS", "75"
 MAX_AGENT_STEPS = int(os.environ.get("MAX_AGENT_STEPS", "65"))
 FINALIZE_WITH_STEPS_REMAINING = int(os.environ.get("FINALIZE_WITH_STEPS_REMAINING", "8"))
 MAX_WEB_FETCHES = int(os.environ.get("MAX_WEB_FETCHES", "250"))
+WEB_FETCH_WARNING_RATIO = float(os.environ.get("WEB_FETCH_WARNING_RATIO", "0.85"))
 MAX_OUTPUT_TOKENS = int(os.environ.get("MAX_OUTPUT_TOKENS", "8000"))
 MAX_COST_USD = float(os.environ.get("MAX_COST_USD", "10.00"))
+MAX_RUNTIME_SECONDS = int(os.environ.get("MAX_RUNTIME_SECONDS", "9600"))
+FINALIZE_WITH_SECONDS_REMAINING = int(os.environ.get("FINALIZE_WITH_SECONDS_REMAINING", "1800"))
 INPUT_COST_PER_MTOK = float(os.environ.get("INPUT_COST_PER_MTOK", "3.00"))
 OUTPUT_COST_PER_MTOK = float(os.environ.get("OUTPUT_COST_PER_MTOK", "15.00"))
 MAX_FETCH_CHARS = int(os.environ.get("MAX_FETCH_CHARS", "1200"))
@@ -598,11 +601,16 @@ def run_agent(cfg: NewsletterConfig) -> dict:
     messages = [{"role": "user", "content": f"Please draft this month's {cfg.subject} newsletter."}]
     web_fetches = 0
     estimated_cost = 0.0
+    started_at = time.monotonic()
     budget_warning_sent = False
     step_warning_sent = False
+    web_fetch_warning_sent = False
+    runtime_warning_sent = False
 
     for step in range(MAX_AGENT_STEPS):
         steps_remaining = MAX_AGENT_STEPS - step
+        elapsed_seconds = time.monotonic() - started_at
+        seconds_remaining = MAX_RUNTIME_SECONDS - elapsed_seconds
         if estimated_cost >= MAX_COST_USD and budget_warning_sent:
             raise RuntimeError(
                 f"Cost budget reached before a draft was submitted: "
@@ -621,6 +629,18 @@ def run_agent(cfg: NewsletterConfig) -> dict:
             })
             budget_warning_sent = True
 
+        if web_fetches >= MAX_WEB_FETCHES * WEB_FETCH_WARNING_RATIO and not web_fetch_warning_sent:
+            messages.append({
+                "role": "user",
+                "content": (
+                    f"You have used {web_fetches} of {MAX_WEB_FETCHES} available web fetches. "
+                    "Stop broad research now. Do not call web_fetch again unless it is essential "
+                    "to finish an already-selected listing. Submit the best complete newsletter "
+                    "using the verified programs and upcoming items you already have."
+                ),
+            })
+            web_fetch_warning_sent = True
+
         if steps_remaining <= FINALIZE_WITH_STEPS_REMAINING and not step_warning_sent:
             messages.append({
                 "role": "user",
@@ -632,6 +652,19 @@ def run_agent(cfg: NewsletterConfig) -> dict:
                 ),
             })
             step_warning_sent = True
+
+        if seconds_remaining <= FINALIZE_WITH_SECONDS_REMAINING and not runtime_warning_sent:
+            minutes_remaining = max(0, int(seconds_remaining // 60))
+            messages.append({
+                "role": "user",
+                "content": (
+                    f"The run has about {minutes_remaining} minutes left before the runtime "
+                    "safety window closes. Stop all further research now. Do not call web_fetch "
+                    "again. Submit the best complete newsletter now using the verified programs "
+                    "and upcoming items you already have."
+                ),
+            })
+            runtime_warning_sent = True
 
         if step:
             print(f"[{TODAY}] Waiting {CLAUDE_CALL_DELAY_SECONDS}s to stay under API rate limits...")
@@ -688,9 +721,14 @@ def run_agent(cfg: NewsletterConfig) -> dict:
                         result = read_reference_file(cfg, block.input["filename"])
                     elif block.name == "web_fetch":
                         web_fetches += 1
-                        if step_warning_sent:
+                        if budget_warning_sent or step_warning_sent or runtime_warning_sent:
                             result = (
-                                "[FINAL STEP WARNING ACTIVE] Do not fetch more pages. "
+                                "[FINALIZATION WARNING ACTIVE] Do not fetch more pages. "
+                                "Call submit_newsletter now using already-verified programs."
+                            )
+                        elif web_fetch_warning_sent and web_fetches > MAX_WEB_FETCHES * WEB_FETCH_WARNING_RATIO:
+                            result = (
+                                "[WEB FETCH WARNING ACTIVE] Broad research is over. "
                                 "Call submit_newsletter now using already-verified programs."
                             )
                         elif web_fetches > MAX_WEB_FETCHES:
